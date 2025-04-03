@@ -15,6 +15,10 @@ Welcome to my personal portfolio! This website showcases my projects, skills, an
 
 ✅ Projects Showcase – Highlights my best work with descriptions and links
 
+✅ Skills & Strengths - Illustrates my Skills and Strengths in real world
+
+✅ Interests  - Indicates my Interests in broad-everchanging tech space
+
 ✅ Contact Form – Get in touch with me easily
 
 ✅ Social Links – Connect with me on LinkedIn, GitHub, and other platforms
