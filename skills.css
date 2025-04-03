@@ -1,0 +1,349 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ECF0F1; /* Light Grey Background */
+    color: #1C1C1C; /* Dark Grey-Black Text */
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Styling */
+#navBar {
+    background: #2C3E50; /* Deep Blue-Grey */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #F39C12; /* Warm Gold */
+    text-transform: uppercase;
+}
+.logo span {
+    color: #D68910; /* Darker Gold */
+}
+
+#navBar ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding-right: 40px;
+    margin: 0;
+}
+#navBar li {
+    display: inline;
+}
+#navBar a {
+    text-decoration: none;
+    color: #ECF0F1; /* Light Grey Text */
+    font-weight: 500;
+    font-size: 18px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+#navBar a:hover, 
+#navBar a.active {
+    color: #F39C12; /* Warm Gold */
+}
+
+/* Skills Section */
+#skills {
+    text-align: center;
+    padding: 60px 20px;
+}
+h2 {
+    
+    font-size:32px;
+    color: #2C3E50; /* Deep Blue-Grey */
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Section Divider Animation */
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #F39C12; /* Warm Gold */
+    margin: 10px auto;
+}
+
+/* Skills Cards */
+#skillsSection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.skill-card {
+    background: #ffffff; /* White for a clean look */
+    border-left: 5px solid #F39C12; /* Warm Gold */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(44, 62, 80, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 0.8s ease-in-out forwards;
+}
+
+.skill-card h3 {
+    color: #2C3E50; /* Deep Blue-Grey */
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.skill-card p {
+    font-size: 16px;
+    color: #1C1C1C; /* Dark Grey-Black */
+}
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(44, 62, 80, 0.3);
+    border-left-color: #D68910; /* Darker Gold */
+}
+
+/* Programming Languages */
+#languageList {
+    margin-top: 50px;
+    text-align: center;
+}
+.language-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    animation: fadeIn 1.2s ease-in-out;
+}
+.languageItem {
+    background: #F39C12; /* Warm Gold */
+    color: #1C1C1C; /* Dark Grey-Black */
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 20px;
+    box-shadow: 0 3px 10px rgba(44, 62, 80, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: slideUp 0.8s ease-in-out forwards;
+}
+.languageItem:hover {
+    transform: scale(1.1);
+    background: #D68910; /* Darker Gold */
+    box-shadow: 0px 5px 15px rgba(44, 62, 80, 0.3);
+}
+
+/* Animations */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* Strengths Section */
+#strengths {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #ECF0F1; /* Light Grey */
+}
+
+#strengths h2 {
+    font-size: 32px;
+    color: #2C3E50; /* Deep Blue-Grey */
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Section Divider Animation */
+#strengths h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #F39C12; /* Warm Gold */
+    margin: 10px auto;
+}
+
+/* Strength Cards */
+.strengths-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.strength-card {
+    background: #ffffff; /* Clean White */
+    border-left: 5px solid #F39C12; /* Warm Gold */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(44, 62, 80, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 0.8s ease-in-out forwards;
+}
+
+.strength-card h3 {
+    color: #2C3E50; /* Deep Blue-Grey */
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.strength-card p {
+    font-size: 16px;
+    color: #1C1C1C; /* Dark Grey-Black */
+}
+
+.strength-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(44, 62, 80, 0.3);
+    border-left-color: #D68910; /* Darker Gold */
+}
+/* Footer Styling */
+footer {
+    background-color: #222; /* Matching About Section */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+}
+
+.footer-container {
+    width: 80%;
+    margin: auto;
+}
+
+/* Social Links Styling */
+.social-links {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-links a {
+    font-size: 32px; /* Larger Icons */
+    color: #fff;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: scale(1.3);
+    color: #1DA1F2; /* Twitter Blue */
+}
+/* Hide Checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* Hamburger Icon */
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #ECF0F1; /* Light Grey */
+}
+
+/* Responsive Navigation */
+@media screen and (max-width: 768px) {
+    #navBar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    #navBar ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: left;
+        padding-left: 0;
+    }
+
+    /* Show menu when checkbox is checked */
+    #menu-toggle:checked + .menu-icon + ul {
+        display: flex;
+    }
+
+    #navBar li {
+        width: 100%;
+        padding: 10px;
+        text-align: left;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+#skillsSection, 
+    .strengths-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 15px;
+    }
+h2{
+    text-align: center;
+    margin-top: 6vh;
+}
+h2::after{
+    margin-top: 0.1vh;
+}
+.languageList{
+  margin-top:30px;
+  padding: 10px;
+}
+.language-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; 
+    padding: 15px;
+}
+.languageItem {
+    padding: 10px 15px;
+    font-size: 14px; 
+    border-radius: 15px;
+    width: 80%; 
+    text-align: center;
+}
+footer {
+    padding: 15px 10px;
+}
+
+.social-links {
+    gap: 15px;
+}
+
+.social-links a {
+    font-size: 26px; /* Slightly smaller icons */
+}
+}
+
