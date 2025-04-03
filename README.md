@@ -21,7 +21,7 @@ Welcome to my personal portfolio! This website showcases my projects, skills, an
 
 🛠️ Technologies Used
 
-Frontend: HTML, CSS, JavaScript
+Frontend: HTML, CSS
 
 Styling: Poppins & Montserrat fonts, CSS animations
 
