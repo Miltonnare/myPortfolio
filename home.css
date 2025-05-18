@@ -347,7 +347,61 @@ footer {
     cursor: pointer;
     color: #ECF0F1; /* Light Grey */
 }
+.contact-container {
+    background-color: rgb(88, 74, 74);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.contact-form-wrapper {
+    width: 100%;
+    max-width: 500px; /* Adjust as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-head {
+    margin-bottom: 2rem;
+    color: #fff;  /* Optional */
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+textarea {
+    height: 6rem;
+    resize: none;
+}
+
+button {
+    padding: 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;  /* Full width for better alignment */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#status-message {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #a4179a;
+}
 /* Responsive Navigation */
 @media screen and (max-width: 768px) {
     #navBar {
