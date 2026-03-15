@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  @apply bg-background text-foreground scroll-smooth;
+}
+
+body {
+  @apply min-h-screen antialiased;
+}
+
+.light {
+  --tw-bg-opacity: 1;
+  --tw-text-opacity: 1;
+  background-color: theme("colors.background.light");
+  color: theme("colors.slate.900");
+}
+
+.gradient-bg {
+  @apply bg-mesh-gradient;
+}
+
+.glass {
+  @apply bg-card/80 backdrop-blur-xl border border-border-subtle;
+}
+
+.section-container {
+  @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.section-padding {
+  @apply py-16 sm:py-20 lg:py-24;
+}
+
+.tag {
+  @apply inline-flex items-center rounded-full border border-border-subtle bg-card/60 px-3 py-1 text-xs font-medium text-foreground-muted;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-slate-950 shadow-subtle transition hover:shadow-soft hover:-translate-y-0.5 active:translate-y-0;
+}
+
+.btn-outline {
+  @apply inline-flex items-center justify-center rounded-full border border-border-subtle bg-card/60 px-5 py-2.5 text-sm font-medium text-foreground-muted hover:text-foreground hover:bg-card;
+}
+
