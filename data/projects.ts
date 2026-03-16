@@ -13,101 +13,120 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: "bmi-calculator",
-    title: "BMI Calculator",
+    id: "jobs-parlour",
+    title: "Jobs Parlour – Job Portal Platform",
     description:
-      "A lightweight BMI calculator that helps users quickly determine their body mass index with instant feedback.",
-    techStack: ["HTML", "CSS", "JavaScript"],
-    image: "/images/bmi-calc.png",
-    github: "https://github.com/Miltonnare/BMI-Calculator.git",
+      "A full-stack job portal built with the MERN stack where employers can post jobs and job seekers can apply. Features authentication, role-based dashboards, protected routes, job search, and applicant management.",
+    techStack: ["React", "Node.js", "Express", "MongoDB", "JWT", "Tailwind"],
+    image: "/images/jobs-parlour.png",
+    github: "https://github.com/Miltonnare/Jobs-Parlour",
     live: "#",
-    category: "frontend"
+    category: "fullstack"
   },
+
   {
-    id: "quiz-app",
-    title: "Quiz App",
+    id: "event-management-system",
+    title: "Event Management System",
     description:
-      "Interactive quiz experience with multiple-choice questions, scoring, and progress visualization.",
-    techStack: ["HTML", "CSS", "JavaScript"],
-    image: "/images/quizjs.png",
-    github: "https://github.com/Miltonnare/QuizApp.git",
+      "A full-stack event platform that allows users to register, browse events, and interact with organizers. Built with Node.js and MongoDB with secure backend APIs and scalable architecture.",
+    techStack: ["Node.js", "Express", "MongoDB", "REST API"],
+    image: "/images/event-system.png",
+    github: "https://github.com/Miltonnare/Event-Management-System",
     live: "#",
-    category: "frontend"
+    category: "fullstack"
   },
+
   {
-    id: "calendar-app",
-    title: "Calendar Application",
+    id: "bookstore-api",
+    title: "Bookstore REST API",
     description:
-      "A functional calendar application to explore dates and basic scheduling interactions.",
-    techStack: ["HTML", "CSS", "JavaScript"],
-    image: "/images/calender.png",
-    github: "https://github.com/Miltonnare/calender.git",
-    live: "#",
-    category: "frontend"
+      "A RESTful API for managing books, authors, and inventory with advanced MongoDB queries, indexing, aggregation pipelines, pagination, and filtering.",
+    techStack: ["Node.js", "Express", "MongoDB"],
+    image: "/images/bookstore-api.png",
+    github: "https://github.com/Miltonnare/Bookstore-API",
+    category: "api"
   },
+
   {
-    id: "car-auctioner",
-    title: "Car Auctioner Landing Page",
+    id: "auth-api",
+    title: "User Authentication API",
     description:
-      "Landing page concept for a car auction platform with emphasis on clear hierarchy and CTA design.",
-    techStack: ["HTML", "CSS", "JavaScript"],
-    image: "/images/car-auctioner.png",
-    github: "https://github.com/Miltonnare/carAuctioner.git",
+      "Secure authentication system using JWT and bcrypt with protected routes, user login, registration, and profile endpoints.",
+    techStack: ["Node.js", "Express", "MongoDB", "JWT", "bcrypt"],
+    image: "/images/auth-api.png",
+    github: "https://github.com/Miltonnare/Auth-API",
+    category: "api"
+  },
+
+  {
+    id: "task-manager-react",
+    title: "Task Manager (React + Tailwind)",
+    description:
+      "Modern task management app with dark/light theme switching, reusable components, local storage persistence, and responsive design using React and Tailwind CSS.",
+    techStack: ["React", "TailwindCSS", "JavaScript"],
+    image: "/images/task-manager.png",
+    github: "https://github.com/Miltonnare/TaskManager",
     live: "#",
     category: "frontend"
   },
+
+  {
+    id: "blog-app",
+    title: "Blog App with API Integration",
+    description:
+      "A blog platform that dynamically loads posts from APIs with search, filtering, and responsive UI components.",
+    techStack: ["JavaScript", "HTML", "CSS", "REST API"],
+    image: "/images/blog.png",
+    github: "https://github.com/Miltonnare/Blog-App",
+    live: "#",
+    category: "frontend"
+  },
+
   {
     id: "typing-speed",
     title: "Typing Speed Tester",
     description:
-      "Typing speed tester with multiple difficulty levels and real-time WPM tracking.",
+      "Interactive typing speed tester with real-time WPM calculation, accuracy tracking, and dynamic text generation.",
     techStack: ["HTML", "CSS", "JavaScript"],
     image: "/images/typing.png",
-    github: "https://github.com/Miltonnare/TypingSpeed.git",
+    github: "https://github.com/Miltonnare/TypingSpeed",
     live: "#",
     category: "frontend"
   },
+
   {
-    id: "coffee-landing",
-    title: "Coffee Landing Page",
+    id: "quiz-app",
+    title: "Quiz Application",
     description:
-      "Aesthetic landing page for a coffee brand showcasing visual hierarchy and typography.",
-    techStack: ["HTML", "CSS"],
-    image: "/images/coffee.png",
-    github: "https://github.com/Miltonnare/Coffe-Landing-Page.git",
+      "Interactive quiz app with multiple question sets, score tracking, and dynamic UI feedback.",
+    techStack: ["HTML", "CSS", "JavaScript"],
+    image: "/images/quizjs.png",
+    github: "https://github.com/Miltonnare/QuizApp",
     live: "#",
     category: "frontend"
   },
+
+  {
+    id: "bmi-calculator",
+    title: "BMI Calculator",
+    description:
+      "A simple health calculator that determines Body Mass Index and provides instant feedback based on results.",
+    techStack: ["HTML", "CSS", "JavaScript"],
+    image: "/images/bmi-calc.png",
+    github: "https://github.com/Miltonnare/BMI-Calculator",
+    live: "#",
+    category: "experiment"
+  },
+
   {
     id: "quote-generator",
-    title: "Quote Generator App",
-    description: "Random quote generator that surfaces a new quote on each interaction.",
+    title: "Random Quote Generator",
+    description:
+      "A lightweight application that generates random inspirational quotes using JavaScript.",
     techStack: ["HTML", "CSS", "JavaScript"],
     image: "/images/quote.png",
-    github: "https://github.com/Miltonnare/QuoteGenerator.git",
+    github: "https://github.com/Miltonnare/QuoteGenerator",
     live: "#",
     category: "experiment"
-  },
-  {
-    id: "registration-localstorage",
-    title: "Input Registration",
-    description: "Registration form that persists user input using browser local storage.",
-    techStack: ["HTML", "CSS", "JavaScript"],
-    image: "/images/registra.png",
-    github: "https://github.com/Miltonnare/Registration.git",
-    live: "#",
-    category: "experiment"
-  },
-  {
-    id: "survey-form",
-    title: "Survey Form",
-    description:
-      "Accessible survey form implementing core input components and validation patterns.",
-    techStack: ["HTML", "CSS"],
-    image: "/images/survey.png",
-    github: "https://github.com/Miltonnare/Simple-Survey-Form.git",
-    live: "#",
-    category: "frontend"
   }
 ];
-
