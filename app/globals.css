@@ -1,6 +1,36 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --font-sans: system-ui, "SF Pro Text", Inter, ui-sans-serif, system-ui;
+
+  --color-background: #020817;
+  --color-background-light: #f9fafb;
+  --color-foreground: #e5e7eb;
+  --color-foreground-muted: #9ca3af;
+  --color-primary: #22c55e;
+  --color-primary-soft: rgba(34, 197, 94, 0.1);
+  --color-accent-purple: #6366f1;
+  --color-accent-cyan: #22d3ee;
+  --color-card: rgba(15, 23, 42, 0.9);
+  --color-card-light: #ffffff;
+  --color-border-subtle: rgba(148, 163, 184, 0.25);
+
+  --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.65);
+  --shadow-subtle: 0 10px 30px rgba(15, 23, 42, 0.45);
+
+  --background-image-radial-soft: radial-gradient(
+    circle at top,
+    rgba(34, 197, 94, 0.15),
+    transparent 60%
+  );
+  --background-image-mesh-gradient: radial-gradient(
+      circle at 0% 0%,
+      rgba(56, 189, 248, 0.25),
+      transparent 55%
+    ),
+    radial-gradient(circle at 100% 0%, rgba(94, 92, 255, 0.25), transparent 55%),
+    radial-gradient(circle at 0% 100%, rgba(236, 72, 153, 0.18), transparent 55%);
+}
 
 :root {
   color-scheme: dark;
@@ -16,10 +46,8 @@ body {
 }
 
 .light {
-  --tw-bg-opacity: 1;
-  --tw-text-opacity: 1;
-  background-color: theme("colors.background.light");
-  color: theme("colors.slate.900");
+  background-color: var(--color-background-light);
+  color: #0f172a;
 }
 
 .gradient-bg {

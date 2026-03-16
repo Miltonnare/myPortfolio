@@ -18,7 +18,7 @@ export const projects: Project[] = [
     description:
       "A lightweight BMI calculator that helps users quickly determine their body mass index with instant feedback.",
     techStack: ["HTML", "CSS", "JavaScript"],
-    image: "/images/bmi calc.png",
+    image: "/images/bmi-calc.png",
     github: "https://github.com/Miltonnare/BMI-Calculator.git",
     live: "#",
     category: "frontend"
@@ -51,7 +51,7 @@ export const projects: Project[] = [
     description:
       "Landing page concept for a car auction platform with emphasis on clear hierarchy and CTA design.",
     techStack: ["HTML", "CSS", "JavaScript"],
-    image: "/images/carAuctioner.png",
+    image: "/images/car-auctioner.png",
     github: "https://github.com/Miltonnare/carAuctioner.git",
     live: "#",
     category: "frontend"
@@ -73,7 +73,7 @@ export const projects: Project[] = [
     description:
       "Aesthetic landing page for a coffee brand showcasing visual hierarchy and typography.",
     techStack: ["HTML", "CSS"],
-    image: "/images/Coffee.png",
+    image: "/images/coffee.png",
     github: "https://github.com/Miltonnare/Coffe-Landing-Page.git",
     live: "#",
     category: "frontend"

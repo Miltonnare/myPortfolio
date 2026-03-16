@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   title: "Portfolio | Software Engineer",
   description:
     "Modern portfolio for a full stack software engineer specializing in React, Node.js, and scalable web applications.",
-  metadataBase: new URL("https://example.com"),
+  metadataBase: new URL("https://miltonnaresportfolio.netlify.app/"),
   openGraph: {
     title: "Software Engineer Portfolio",
     description:
       "Full stack developer focused on building performant, delightful experiences.",
-    url: "https://example.com",
+    url: "https://miltonnaresportfolio.netlify.app/",
     siteName: "Developer Portfolio",
     locale: "en_US",
     type: "website"

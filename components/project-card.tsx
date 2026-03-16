@@ -13,9 +13,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <Image
           src={project.image}
           alt={project.title}
-          fill
-          sizes="(min-width: 768px) 300px, 100vw"
-          className="object-cover transition-transform duration-300 group-hover:scale-105"
+          width={800}
+          height={480}
+          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
         />
       </div>
       <div className="flex flex-1 flex-col gap-3 p-4">

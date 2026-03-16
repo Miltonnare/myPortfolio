@@ -22,9 +22,9 @@ export function About() {
               <Image
                 src="/images/prof.png"
                 alt="Milton profile"
-                fill
-                sizes="128px"
-                className="object-cover"
+                width={128}
+                height={128}
+                className="h-full w-full object-cover"
               />
             </div>
             <div className="space-y-3 text-center md:text-left">
