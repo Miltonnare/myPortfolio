@@ -1,115 +1,164 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { BookOpen, Award, GraduationCap, Code2, ShieldAlert } from "lucide-react";
 
 export function About() {
+  const cardVariants = {
+    hidden: { y: 30, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { type: "spring" as const, stiffness: 100, damping: 15 }
+    }
+  };
+
   return (
-    <section id="about" className="section-container section-padding">
-      <div className="mb-8 space-y-3 text-center md:text-left">
-        <p className="tag mx-auto md:mx-0">About</p>
-        <h2 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
-          Developer with a strong CS foundation.
+    <section id="about" className="section-container section-padding relative">
+      <div className="absolute top-1/2 left-0 h-[250px] w-[250px] rounded-full bg-accent-purple/5 blur-[120px] pointer-events-none -z-10" />
+
+      {/* Section Title */}
+      <div className="mb-12 space-y-4 text-center md:text-left">
+        <span className="tag">My Background</span>
+        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          Bridging CS Theory with Practical Execution
         </h2>
-        <p className="mx-auto max-w-2xl text-sm leading-relaxed text-foreground-muted md:mx-0 sm:text-base">
-          I&apos;m a software developer passionate about solving real problems with
-          clean, maintainable code. I enjoy working across the stack—from intuitive
-          frontends to robust APIs and data models.
+        <p className="mx-auto max-w-3xl text-sm leading-relaxed text-foreground-muted md:mx-0 sm:text-base">
+          I combine academic foundations in Computer Science with the speed and adaptiveness of modern software engineering. My goal is to build secure, robust applications that solve real-world problems.
         </p>
       </div>
 
-      <div className="grid gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.2fr)] md:items-start">
-        <div className="space-y-5">
-          <div className="glass flex flex-col items-center gap-4 rounded-3xl p-6 md:items-start">
-            <div className="relative h-32 w-32 overflow-hidden rounded-full border border-border-subtle shadow-subtle">
+      <div className="grid gap-12 lg:grid-cols-[1.1fr_1.3fr] items-start">
+        {/* Profile Card & Journey Details */}
+        <div className="space-y-6">
+          <motion.div
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            className="glass p-6 rounded-2xl flex flex-col sm:flex-row gap-6 items-center sm:items-start hover:border-primary/20"
+          >
+            <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-2xl border border-border-subtle shadow-subtle bg-slate-900">
               <Image
                 src="/images/prof.png"
-                alt="Milton profile"
-                width={128}
-                height={128}
-                className="h-full w-full object-cover"
+                alt="Milton profile picture"
+                fill
+                sizes="112px"
+                className="object-cover"
+                priority
               />
             </div>
-            <div className="space-y-3 text-center md:text-left">
-              <h3 className="text-lg font-semibold text-foreground">Milton</h3>
-              <p className="text-xs uppercase tracking-wide text-foreground-muted/80">
-                Software Developer · CS Student
+            <div className="space-y-3 text-center sm:text-left">
+              <h3 className="text-xl font-bold text-foreground">Milton Odhiambo</h3>
+              <p className="text-xs font-semibold uppercase tracking-wider text-primary">
+                Full-Stack Software Developer
               </p>
-              <p className="text-sm text-foreground-muted">
-                I thrive in problem‑solving, building user‑friendly experiences, and
-                shipping reliable web applications.
+              <p className="text-xs sm:text-sm text-foreground-muted leading-relaxed">
+                Self-taught innovator, problem solver, and builder. I focus on developing clean APIs, structured databases, and accessible interfaces.
               </p>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="grid gap-4 text-xs text-foreground-muted sm:grid-cols-2">
-            <div className="rounded-2xl border border-border-subtle/60 bg-slate-950/60 p-4">
-              <p className="text-[10px] uppercase tracking-wide text-foreground-muted/70">
-                Education
+          {/* Education & Fellowship Grids */}
+          <div className="grid gap-4 sm:grid-cols-2">
+            <motion.div
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+              className="glass p-5 rounded-2xl space-y-2 hover:border-primary/20"
+            >
+              <div className="flex items-center gap-2 text-primary">
+                <GraduationCap className="h-5 w-5" />
+                <h4 className="text-xs font-bold uppercase tracking-wider">Education</h4>
+              </div>
+              <h5 className="text-sm font-bold text-foreground">BSc. Computer Science</h5>
+              <p className="text-xs text-foreground-muted">
+                Murang&apos;a University of Technology. Focused on Data Structures & Algorithms, Object-Oriented Programming (C++), and Database systems.
               </p>
-              <p className="mt-1 text-sm font-medium text-foreground">
-                BSc. Computer Science
+            </motion.div>
+
+            <motion.div
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+              className="glass p-5 rounded-2xl space-y-2 hover:border-primary/20"
+            >
+              <div className="flex items-center gap-2 text-accent">
+                <Award className="h-5 w-5" />
+                <h4 className="text-xs font-bold uppercase tracking-wider">Fellowship</h4>
+              </div>
+              <h5 className="text-sm font-bold text-foreground">Power Learn Project</h5>
+              <p className="text-xs text-foreground-muted">
+                Advanced software track. Specialized in Python ecosystems, web applications, SQL & NoSQL architectures, and product development lifecycles.
               </p>
-              <p className="mt-1">
-                Murang&apos;a University of Technology with focus on Data Structures,
-                Algorithms, OOP in C++, Web Development, and AI.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-border-subtle/60 bg-slate-950/60 p-4">
-              <p className="text-[10px] uppercase tracking-wide text-foreground-muted/70">
-                Power Learn Project
-              </p>
-              <p className="mt-1 text-sm font-medium text-foreground">
-                Software Development Track
-              </p>
-              <p className="mt-1">
-                Python, databases, web development, startup building, and software
-                engineering essentials.
-              </p>
-            </div>
+            </motion.div>
           </div>
         </div>
 
-        <div className="space-y-8">
-          <div className="space-y-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wide text-foreground-muted">
-              Interests
+        {/* Narrative & Career Aspirations */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6 }}
+          className="space-y-8"
+        >
+          {/* Personal Journey Narrative */}
+          <div className="glass p-6 rounded-2xl space-y-4">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-foreground-muted flex items-center gap-2">
+              <Code2 className="h-4 w-4 text-primary" />
+              <span>My Coding Philosophy</span>
             </h3>
-            <div className="grid gap-3 text-xs sm:grid-cols-3">
+            <p className="text-xs sm:text-sm text-foreground-muted leading-relaxed">
+              I started coding because I was fascinated by how a few lines of script could automate tasks and build tools used by millions. This curiosity quickly evolved into a passion for full-stack engineering. 
+            </p>
+            <p className="text-xs sm:text-sm text-foreground-muted leading-relaxed">
+              I believe software should be written for people first. Whether it&apos;s optimizing API response rates or making a layout screen reader friendly, I take pride in sweating the small details that make a product feel polished and professional.
+            </p>
+          </div>
+
+          {/* Technical Targets / Focus Areas */}
+          <div className="space-y-4">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-foreground-muted flex items-center gap-2">
+              <BookOpen className="h-4 w-4 text-accent" />
+              <span>Core Interest & Research Areas</span>
+            </h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {[
-                "Software Engineering",
-                "Python Development",
-                "Artificial Intelligence",
-                "Data Science",
-                "Cybersecurity",
-                "Cloud Computing"
-              ].map((item) => (
+                "System Architecture",
+                "Python Backend",
+                "NLP & AI Models",
+                "API Security",
+                "NoSQL Datastores",
+                "Cloud Infrastructures"
+              ].map((interest, idx) => (
                 <div
-                  key={item}
-                  className="rounded-2xl border border-border-subtle/60 bg-slate-950/70 px-3 py-2 text-center text-foreground-muted transition hover:border-primary hover:text-foreground"
+                  key={idx}
+                  className="rounded-xl border border-border-subtle bg-slate-950/45 px-3 py-2.5 text-center text-xs font-semibold text-foreground-muted hover:border-primary hover:text-foreground hover:bg-slate-900/60 transition-all duration-300"
                 >
-                  {item}
+                  {interest}
                 </div>
               ))}
             </div>
           </div>
-          <div className="space-y-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wide text-foreground-muted">
-              What I&apos;m aiming for
-            </h3>
-            <ul className="space-y-2 text-sm text-foreground-muted">
-              <li>
-                • Early‑career roles where I can contribute to production React /
-                Node.js codebases.
-              </li>
-              <li>
-                • Teams that value clean design systems, testing, and thoughtful UX.
-              </li>
-              <li>
-                • Opportunities to work on APIs, authentication, and developer tools.
-              </li>
+
+          {/* Recruiter Focus */}
+          <div className="glass p-5 rounded-2xl bg-gradient-to-br from-primary/5 to-accent/5 border border-primary/10 space-y-2">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-primary flex items-center gap-1.5">
+              <ShieldAlert className="h-4 w-4" />
+              <span>Recruiter Scan-Ready</span>
+            </h4>
+            <ul className="space-y-1.5 text-xs text-foreground-muted">
+              <li>• Available for internships, junior full-stack roles, or contract projects.</li>
+              <li>• Strong foundation in version control, code review standards, and CI/CD.</li>
+              <li>• Able to write maintainable code using TypeScript, React/Next.js, Node.js, and Python.</li>
             </ul>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 }
-

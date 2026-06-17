@@ -1,9 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  experimental: {
-    appDir: true
-  },
   images: {
     remotePatterns: [
       {
@@ -15,4 +12,3 @@ const nextConfig = {
 };
 
 export default nextConfig;
-

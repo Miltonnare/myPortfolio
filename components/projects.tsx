@@ -1,15 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { projects, type ProjectCategory } from "@/data/projects";
 import { ProjectCard } from "@/components/project-card";
 
 const filters: { label: string; value: ProjectCategory | "all" }[] = [
-  { label: "All", value: "all" },
-  { label: "Frontend", value: "frontend" },
-  { label: "Fullstack", value: "fullstack" },
-  { label: "APIs", value: "api" },
-  { label: "Experiments", value: "experiment" }
+  { label: "All Works", value: "all" },
+  { label: "Full-Stack", value: "fullstack" },
+  { label: "APIs & Services", value: "api" },
+  { label: "Frontend Craft", value: "frontend" }
 ];
 
 export function Projects() {
@@ -19,27 +19,30 @@ export function Projects() {
     filter === "all" ? projects : projects.filter((p) => p.category === filter);
 
   return (
-    <section id="projects" className="section-container section-padding space-y-8">
-      <div className="space-y-3 text-center">
-        <p className="tag mx-auto">Projects</p>
-        <h2 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
-          Production‑minded projects and experiments.
+    <section id="projects" className="section-container section-padding space-y-12 relative">
+      <div className="absolute top-1/3 right-1/4 h-[250px] w-[250px] rounded-full bg-primary/5 blur-[100px] pointer-events-none -z-10" />
+
+      {/* Section Header */}
+      <div className="space-y-4 text-center">
+        <span className="tag">Featured Work</span>
+        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          Engineering Solutions & Applications
         </h2>
         <p className="mx-auto max-w-2xl text-sm leading-relaxed text-foreground-muted sm:text-base">
-          A selection of UI experiments, tools, and apps—showcasing both frontend craft
-          and practical engineering.
+          Explore a selection of end-to-end products, robust backend APIs, and utility scripts that highlight my software engineering principles.
         </p>
       </div>
 
+      {/* Filter Buttons */}
       <div className="flex flex-wrap justify-center gap-2 text-xs">
         {filters.map((f) => (
           <button
             key={f.value}
             onClick={() => setFilter(f.value)}
-            className={`rounded-full border px-3 py-1 transition ${
+            className={`rounded-xl border px-4 py-2 font-semibold transition-all duration-300 cursor-pointer ${
               filter === f.value
-                ? "border-primary bg-primary-soft text-primary"
-                : "border-border-subtle bg-slate-950/60 text-foreground-muted hover:border-primary hover:text-foreground"
+                ? "border-primary bg-primary/10 text-primary shadow-soft shadow-primary/10 scale-105"
+                : "border-border-subtle bg-slate-950/40 text-foreground-muted hover:border-primary/50 hover:text-foreground hover:scale-102"
             }`}
           >
             {f.label}
@@ -47,12 +50,26 @@ export function Projects() {
         ))}
       </div>
 
-      <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-        {filtered.map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
-      </div>
+      {/* Projects Grid with Framer Motion AnimatePresence */}
+      <motion.div
+        layout
+        className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+      >
+        <AnimatePresence mode="popLayout">
+          {filtered.map((project) => (
+            <motion.div
+              key={project.id}
+              layout
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ duration: 0.3 }}
+            >
+              <ProjectCard project={project} />
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </motion.div>
     </section>
   );
 }
-

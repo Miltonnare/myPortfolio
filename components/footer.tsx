@@ -1,51 +1,68 @@
+"use client";
+
 import Link from "next/link";
+import { Mail } from "lucide-react";
+import { Github, Linkedin, Twitter } from "@/components/brand-icons";
 
 export function Footer() {
+  const currentYear = new Date().getFullYear();
+
+  const socialLinks = [
+    {
+      href: "https://github.com/Miltonnare",
+      icon: <Github className="h-4 w-4" />,
+      label: "GitHub"
+    },
+    {
+      href: "https://www.linkedin.com/in/milton-odhiambo-14a662261",
+      icon: <Linkedin className="h-4 w-4" />,
+      label: "LinkedIn"
+    },
+    {
+      href: "mailto:miltonnareblessed@gmail.com",
+      icon: <Mail className="h-4 w-4" />,
+      label: "Email"
+    },
+    {
+      href: "https://x.com/Mr2Logic",
+      icon: <Twitter className="h-4 w-4" />,
+      label: "X (Twitter)"
+    }
+  ];
+
   return (
-    <footer className="border-t border-border-subtle/60 bg-slate-950/80">
-      <div className="section-container py-8 text-center text-sm text-foreground-muted">
-        <div className="mb-4">
-          <h3 className="text-base font-semibold text-foreground">
-            Let&apos;s build something together
-          </h3>
-          <p className="mt-1 text-xs sm:text-sm">
-            Open to internships, junior roles, and impactful collaborations.
+    <footer className="border-t border-border-subtle/40 bg-slate-950/70 py-10">
+      <div className="section-container flex flex-col items-center justify-between gap-6 sm:flex-row text-center sm:text-left text-sm text-foreground-muted">
+        
+        {/* Footer Brand Info */}
+        <div className="space-y-1">
+          <h3 className="font-bold text-foreground">Milton Odhiambo</h3>
+          <p className="text-xs text-foreground-muted">
+            Building reliable web solutions & API systems.
           </p>
         </div>
-        <div className="mb-4 flex justify-center gap-5 text-xs sm:text-sm">
-          <Link
-            href="https://github.com/Miltonnare"
-            target="_blank"
-            className="text-foreground-muted transition hover:-translate-y-0.5 hover:text-primary"
-          >
-            GitHub
-          </Link>
-          <Link
-            href="https://www.linkedin.com/in/milton-odhiambo-14a662261"
-            target="_blank"
-            className="text-foreground-muted transition hover:-translate-y-0.5 hover:text-primary"
-          >
-            LinkedIn
-          </Link>
-          <Link
-            href="https://x.com/Mr2Logic"
-            target="_blank"
-            className="text-foreground-muted transition hover:-translate-y-0.5 hover:text-primary"
-          >
-            X
-          </Link>
-          <Link
-            href="mailto:miltonnareblessed@gmail.com"
-            className="text-foreground-muted transition hover:-translate-y-0.5 hover:text-primary"
-          >
-            Email
-          </Link>
+
+        {/* Social Links Panel */}
+        <div className="flex justify-center gap-3">
+          {socialLinks.map((social, idx) => (
+            <Link
+              key={idx}
+              href={social.href}
+              target={social.href.startsWith("mailto") ? undefined : "_blank"}
+              aria-label={social.label}
+              className="flex h-9 w-9 items-center justify-center rounded-xl border border-border-subtle bg-slate-900/30 text-foreground-muted hover:text-primary hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-300"
+            >
+              {social.icon}
+            </Link>
+          ))}
         </div>
-        <p className="text-xs text-foreground-muted/70">
-          © {new Date().getFullYear()} Milton · All rights reserved.
+
+        {/* Copyright */}
+        <p className="text-xs text-foreground-muted/65">
+          &copy; {currentYear} Milton. All rights reserved.
         </p>
+
       </div>
     </footer>
   );
 }
-

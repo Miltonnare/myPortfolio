@@ -1,32 +1,23 @@
 "use client";
 
-import { Dispatch, SetStateAction } from "react";
-import { cn } from "@/lib/cn";
+import { useTheme } from "@/components/theme-provider";
+import { Sun, Moon } from "lucide-react";
 
-type Theme = "dark" | "light";
-
-interface ThemeToggleProps {
-  theme: Theme;
-  setTheme: Dispatch<SetStateAction<Theme>>;
-}
-
-export function ThemeToggle({ theme, setTheme }: ThemeToggleProps) {
+export function ThemeToggle() {
+  const { theme, toggleTheme } = useTheme();
   const isDark = theme === "dark";
 
   return (
     <button
       aria-label="Toggle theme"
-      onClick={() => setTheme(isDark ? "light" : "dark")}
-      className={cn(
-        "glass flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-medium text-foreground-muted shadow-subtle",
-        "hover:text-foreground hover:-translate-y-0.5 transition"
-      )}
+      onClick={toggleTheme}
+      className="glass flex items-center justify-center rounded-xl p-2.5 text-foreground-muted hover:text-foreground transition-all duration-300 hover:scale-[1.05] active:scale-[0.95] cursor-pointer"
     >
-      <span className="text-xs">{isDark ? "●" : "○"}</span>
-      <span className="hidden sm:inline">
-        {isDark ? "Dark workspace" : "Light workspace"}
-      </span>
+      {isDark ? (
+        <Sun className="h-4 w-4 text-amber-400 transition-transform duration-500 hover:rotate-45" />
+      ) : (
+        <Moon className="h-4 w-4 text-indigo-500 transition-transform duration-500 hover:-rotate-12" />
+      )}
     </button>
   );
 }
-
