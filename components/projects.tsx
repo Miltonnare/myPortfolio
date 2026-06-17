@@ -20,7 +20,7 @@ export function Projects() {
 
   return (
     <section id="projects" className="section-container section-padding space-y-12 relative">
-      <div className="absolute top-1/3 right-1/4 h-[250px] w-[250px] rounded-full bg-primary/5 blur-[100px] pointer-events-none -z-10" />
+      <div className="absolute top-1/3 right-1/4 h-62.5 w-62.5 rounded-full bg-primary/5 blur-[100px] pointer-events-none -z-10" />
 
       {/* Section Header */}
       <div className="space-y-4 text-center">

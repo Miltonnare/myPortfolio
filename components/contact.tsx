@@ -61,7 +61,7 @@ export function Contact() {
 
   return (
     <section id="contact" className="section-container section-padding relative">
-      <div className="absolute top-1/4 right-0 h-[250px] w-[250px] rounded-full bg-indigo-500/5 blur-[120px] pointer-events-none -z-10" />
+      <div className="absolute top-1/4 right-0 h-62.5 w-62.5 rounded-full bg-indigo-500/5 blur-[120px] pointer-events-none -z-10" />
 
       {/* Grid wrapper */}
       <div className="grid gap-12 lg:grid-cols-[1.1fr_1.3fr] items-start">

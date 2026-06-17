@@ -66,7 +66,7 @@ export function Skills() {
 
   return (
     <section id="skills" className="section-container section-padding relative">
-      <div className="absolute bottom-0 right-0 h-[300px] w-[300px] rounded-full bg-primary/5 blur-[120px] pointer-events-none -z-10" />
+      <div className="absolute bottom-0 right-0 h-75 w-75 rounded-full bg-primary/5 blur-[120px] pointer-events-none -z-10" />
 
       {/* Section Title */}
       <div className="mb-12 space-y-4 text-center">

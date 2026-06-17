@@ -43,7 +43,7 @@ export function Navbar() {
           href="/"
           className="group flex items-center gap-2 text-sm font-semibold tracking-tight text-foreground transition-all"
         >
-          <span className="rounded-xl bg-gradient-to-r from-primary to-accent px-3 py-1.5 text-xs font-bold text-white shadow-soft group-hover:scale-105 transition-transform duration-300">
+          <span className="rounded-xl bg-linear-to-r from-primary to-accent px-3 py-1.5 text-xs font-bold text-white shadow-soft group-hover:scale-105 transition-transform duration-300">
             Milton.dev
           </span>
           <span className="hidden text-xs text-foreground-muted sm:inline group-hover:text-foreground transition-colors duration-300">
@@ -66,7 +66,7 @@ export function Navbar() {
             ))}
           </div>
 
-          <div className="h-4 w-[1px] bg-border-subtle" />
+          <div className="h-4 w-px bg-border-subtle" />
 
           {/* Socials & Resume */}
           <div className="flex items-center gap-4">

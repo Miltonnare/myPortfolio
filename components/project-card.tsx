@@ -29,7 +29,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           sizes="(max-w-768px) 100vw, (max-w-1200px) 50vw, 33vw"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60" />
+        <div className="absolute inset-0 bg-linear-to-t from-slate-950/80 via-transparent to-transparent opacity-60" />
         <span className="absolute top-3 right-3 rounded-lg bg-slate-950/80 backdrop-blur-md border border-border-subtle/50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-accent">
           {project.category}
         </span>

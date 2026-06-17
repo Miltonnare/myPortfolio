@@ -64,7 +64,7 @@ export function GitHubRepos() {
 
   return (
     <section className="section-container section-padding space-y-10 relative">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[300px] w-[300px] rounded-full bg-accent/5 blur-[120px] pointer-events-none -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-75 w-75 rounded-full bg-accent/5 blur-[120px] pointer-events-none -z-10" />
 
       {/* Title */}
       <div className="space-y-4 text-center">

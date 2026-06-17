@@ -16,7 +16,7 @@ export function About() {
 
   return (
     <section id="about" className="section-container section-padding relative">
-      <div className="absolute top-1/2 left-0 h-[250px] w-[250px] rounded-full bg-accent-purple/5 blur-[120px] pointer-events-none -z-10" />
+      <div className="absolute top-1/2 left-0 h-62.5 w-62.5 rounded-full bg-accent-purple/5 blur-[120px] pointer-events-none -z-10" />
 
       {/* Section Title */}
       <div className="mb-12 space-y-4 text-center md:text-left">
@@ -146,7 +146,7 @@ export function About() {
           </div>
 
           {/* Recruiter Focus */}
-          <div className="glass p-5 rounded-2xl bg-gradient-to-br from-primary/5 to-accent/5 border border-primary/10 space-y-2">
+          <div className="glass p-5 rounded-2xl bg-linear-to-br from-primary/5 to-accent/5 border border-primary/10 space-y-2">
             <h4 className="text-xs font-bold uppercase tracking-wider text-primary flex items-center gap-1.5">
               <ShieldAlert className="h-4 w-4" />
               <span>Recruiter Scan-Ready</span>

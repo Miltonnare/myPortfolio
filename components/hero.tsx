@@ -39,8 +39,8 @@ export function Hero() {
       className="relative section-container flex flex-col items-center justify-between gap-12 pt-24 pb-16 md:flex-row md:pt-32 md:pb-24 overflow-visible"
     >
       {/* Background Glow */}
-      <div className="absolute top-1/4 left-1/4 h-[300px] w-[300px] rounded-full bg-primary/10 blur-[100px] pointer-events-none -z-10" />
-      <div className="absolute bottom-1/4 right-1/4 h-[250px] w-[250px] rounded-full bg-accent/10 blur-[100px] pointer-events-none -z-10" />
+      <div className="absolute top-1/4 left-1/4 h-75 w-75 rounded-full bg-primary/10 blur-[100px] pointer-events-none -z-10" />
+      <div className="absolute bottom-1/4 right-1/4 h-62.5 w-62.5 rounded-full bg-accent/10 blur-[100px] pointer-events-none -z-10" />
 
       {/* Hero Left Content */}
       <motion.div
@@ -61,11 +61,11 @@ export function Hero() {
           className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl leading-[1.1]"
         >
           Engineering{" "}
-          <span className="bg-gradient-to-r from-primary via-accent-purple to-accent bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-primary via-accent-purple to-accent bg-clip-text text-transparent">
             Scalable APIs
           </span>{" "}
           &{" "}
-          <span className="bg-gradient-to-r from-accent via-accent-purple to-primary bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-accent via-accent-purple to-primary bg-clip-text text-transparent">
             Intuitive UIs
           </span>
         </motion.h1>
@@ -86,7 +86,7 @@ export function Hero() {
             {codePills.map((pill, idx) => (
               <span
                 key={idx}
-                className={`rounded-xl border bg-gradient-to-r ${pill.color} px-3 py-1 text-xs font-medium backdrop-blur-sm transition-all duration-300 hover:scale-105`}
+                className={`rounded-xl border bg-linear-to-r ${pill.color} px-3 py-1 text-xs font-medium backdrop-blur-sm transition-all duration-300 hover:scale-105`}
               >
                 {pill.name}
               </span>
