@@ -70,33 +70,33 @@ export function Navbar() {
 
           {/* Socials & Resume */}
           <div className="flex items-center gap-4">
-            <Link
+            <a
               href="https://github.com/Miltonnare"
               target="_blank"
               aria-label="GitHub"
               className="text-foreground-muted hover:text-foreground transition-colors"
             >
               <Github className="h-4.5 w-4.5" />
-            </Link>
-            <Link
+            </a>
+            <a
               href="https://www.linkedin.com/in/milton-odhiambo-14a662261"
               target="_blank"
               aria-label="LinkedIn"
               className="text-foreground-muted hover:text-foreground transition-colors"
             >
               <Linkedin className="h-4.5 w-4.5" />
-            </Link>
+            </a>
             
             <ThemeToggle />
 
-            <Link
+            <a
               href="/CV.pdf"
               target="_blank"
               className="flex items-center gap-1.5 rounded-xl border border-primary/20 bg-primary/5 px-4 py-2 text-xs font-semibold text-primary hover:bg-primary hover:text-white transition-all duration-300 hover:scale-[1.02]"
             >
               <FileText className="h-3.5 w-3.5" />
               <span>Resume</span>
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -137,25 +137,25 @@ export function Navbar() {
               ))}
 
               <div className="flex items-center gap-6 py-2">
-                <Link
+                <a
                   href="https://github.com/Miltonnare"
                   target="_blank"
                   className="flex items-center gap-2 hover:text-foreground transition-colors"
                 >
                   <Github className="h-5 w-5" />
                   <span>GitHub</span>
-                </Link>
-                <Link
+                </a>
+                <a
                   href="https://www.linkedin.com/in/milton-odhiambo-14a662261"
                   target="_blank"
                   className="flex items-center gap-2 hover:text-foreground transition-colors"
                 >
                   <Linkedin className="h-5 w-5" />
                   <span>LinkedIn</span>
-                </Link>
+                </a>
               </div>
 
-              <Link
+              <a
                 href="/CV.pdf"
                 target="_blank"
                 className="mt-2 flex items-center justify-center gap-2 rounded-xl bg-primary py-3 text-center text-sm font-semibold text-white shadow-soft"
@@ -163,7 +163,7 @@ export function Navbar() {
               >
                 <FileText className="h-4 w-4" />
                 <span>Download Resume</span>
-              </Link>
+              </a>
             </div>
           </motion.div>
         )}

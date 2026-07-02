@@ -45,7 +45,7 @@ export function Footer() {
         {/* Social Links Panel */}
         <div className="flex justify-center gap-3">
           {socialLinks.map((social, idx) => (
-            <Link
+            <a
               key={idx}
               href={social.href}
               target={social.href.startsWith("mailto") ? undefined : "_blank"}
@@ -53,7 +53,7 @@ export function Footer() {
               className="flex h-9 w-9 items-center justify-center rounded-xl border border-border-subtle bg-slate-900/30 text-foreground-muted hover:text-primary hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-300"
             >
               {social.icon}
-            </Link>
+            </a>
           ))}
         </div>
 
