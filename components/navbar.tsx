@@ -12,6 +12,7 @@ const links = [
   { href: "#skills", label: "Skills" },
   { href: "#capabilities", label: "Capabilities" },
   { href: "#projects", label: "Case Studies" },
+  { href: "#ai-evaluation", label: "AI Evaluation" },
   { href: "#contact", label: "Contact" }
 ];
 

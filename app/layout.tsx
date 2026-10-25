@@ -14,24 +14,90 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Milton Odhiambo | Full-Stack Software Engineer Portfolio",
+  title: "Milton Odhiambo | Software Engineer — Full-Stack, Systems & AI",
   description:
-    "Premium developer portfolio of Milton Odhiambo, a full-stack engineer specializing in React, Next.js, TypeScript, Node.js, and Python API architecture.",
+    "Developer portfolio and engineering case studies of Milton Odhiambo, a software engineer specializing in C++17 database engines, NestJS/React 19 monorepos, Python FastAPI microservices, and LLM evaluation.",
+  keywords: [
+    "Milton Odhiambo",
+    "Miltonnare",
+    "Software Engineer Nairobi",
+    "Full-Stack Developer Kenya",
+    "C++17 Database Engine",
+    "LuminaDB",
+    "NestJS TypeScript Engineer",
+    "FastAPI Python AI Developer",
+    "AI Evaluation Specialist"
+  ],
+  authors: [{ name: "Milton Odhiambo", url: "https://github.com/Miltonnare" }],
   metadataBase: new URL("https://miltonnaresportfolio.netlify.app/"),
+  alternates: {
+    canonical: "https://miltonnaresportfolio.netlify.app/"
+  },
   openGraph: {
-    title: "Milton Odhiambo | Full-Stack Software Engineer",
+    title: "Milton Odhiambo | Software Engineer — Full-Stack, Systems & AI",
     description:
-      "Full-stack developer focused on engineering high-performing backends, optimizing databases, and designing intuitive interfaces.",
+      "Building transactional C++17 storage engines, full-stack TypeScript monorepos, and low-latency Python AI pipelines.",
     url: "https://miltonnaresportfolio.netlify.app/",
     siteName: "Milton Odhiambo Portfolio",
     locale: "en_US",
     type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Milton Odhiambo | Software Engineer",
+    description:
+      "Full-Stack, Distributed APIs, C++17 Systems & AI/NLP Engineering Case Studies.",
+    creator: "@Mr2Logic"
   }
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
+  const personJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Milton Odhiambo",
+    alternateName: "Miltonnare",
+    jobTitle: "Software Engineer",
+    url: "https://miltonnaresportfolio.netlify.app/",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Nairobi",
+      addressCountry: "KE"
+    },
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: "Murang'a University of Technology"
+    },
+    sameAs: [
+      "https://github.com/Miltonnare",
+      "https://www.linkedin.com/in/milton-odhiambo-14a662261",
+      "https://x.com/Mr2Logic"
+    ],
+    knowsAbout: [
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Node.js",
+      "NestJS",
+      "Python",
+      "FastAPI",
+      "C++17",
+      "Database Storage Engines",
+      "PostgreSQL",
+      "MongoDB",
+      "Natural Language Inference",
+      "LLM Benchmarking"
+    ]
+  };
+
   return (
     <html lang="en" className={outfit.variable} suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+      </head>
       <body className="bg-background text-foreground">
         <ThemeProvider>
           <div className="min-h-screen flex flex-col gradient-bg">

@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, FormEvent, ChangeEvent } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Mail, Send, CheckCircle2, Loader2, AlertCircle, Copy, Check, MapPin, Clock } from "lucide-react";
-import { Github, Linkedin, Twitter } from "@/components/brand-icons";
+import { motion } from "framer-motion";
+import { Mail, Send, CheckCircle2, Loader2, AlertCircle, Copy, Check, MapPin, Clock, ExternalLink } from "lucide-react";
+import { Github, Linkedin } from "@/components/brand-icons";
 
 interface FormData {
   name: string;
@@ -20,6 +20,7 @@ export function Contact() {
     message: ""
   });
 
+  const [lastSubmitted, setLastSubmitted] = useState<FormData | null>(null);
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -45,6 +46,14 @@ export function Contact() {
     }
   };
 
+  const buildMailtoUrl = (data: FormData) => {
+    const subject = encodeURIComponent(`[Portfolio Inquiry] ${data.subject}`);
+    const body = encodeURIComponent(
+      `Name: ${data.name}\nEmail: ${data.email}\n\n${data.message}`
+    );
+    return `mailto:miltonnareblessed@gmail.com?subject=${subject}&body=${body}`;
+  };
+
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -55,12 +64,34 @@ export function Contact() {
     }
 
     setLoading(true);
-    // Simulate network submission delay
-    await new Promise((resolve) => setTimeout(resolve, 1200));
+    setLastSubmitted(formData);
 
-    setLoading(false);
-    setSubmitted(true);
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    try {
+      const payload = new URLSearchParams({
+        "form-name": "portfolio-contact",
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message
+      }).toString();
+
+      const res = await fetch("/__forms.html", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: payload
+      });
+
+      if (!res.ok) {
+        // Fallback: trigger mailto client so message is never dropped
+        window.location.href = buildMailtoUrl(formData);
+      }
+    } catch {
+      window.location.href = buildMailtoUrl(formData);
+    } finally {
+      setLoading(false);
+      setSubmitted(true);
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    }
   };
 
   return (
@@ -168,24 +199,44 @@ export function Contact() {
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="py-10 text-center space-y-3"
+              className="py-10 text-center space-y-4"
             >
               <div className="h-12 w-12 rounded-full bg-emerald-500/20 text-emerald-500 mx-auto flex items-center justify-center border border-emerald-500/30">
                 <CheckCircle2 className="h-6 w-6" />
               </div>
-              <h4 className="text-base font-bold text-foreground">Message Sent Successfully</h4>
+              <h4 className="text-base font-bold text-foreground">Inquiry Logged Successfully</h4>
               <p className="text-xs text-foreground-muted max-w-sm mx-auto">
-                Thank you for reaching out! I typically respond to technical and recruiter inquiries within 24 hours.
+                Your message has been dispatched via Netlify Forms. You can also send a direct copy via your email client below for immediate priority.
               </p>
-              <button
-                onClick={() => setSubmitted(false)}
-                className="btn-secondary text-xs mt-2"
-              >
-                Send Another Message
-              </button>
+              <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+                {lastSubmitted && (
+                  <a
+                    href={buildMailtoUrl(lastSubmitted)}
+                    className="btn-primary text-xs py-2.5 px-4"
+                  >
+                    <Mail className="h-3.5 w-3.5" />
+                    <span>Open Direct Email Copy</span>
+                    <ExternalLink className="h-3 w-3" />
+                  </a>
+                )}
+                <button
+                  onClick={() => setSubmitted(false)}
+                  className="btn-secondary text-xs py-2.5 px-4"
+                >
+                  Send Another Message
+                </button>
+              </div>
             </motion.div>
           ) : (
-            <form onSubmit={onSubmit} className="space-y-4 text-xs sm:text-sm">
+            <form
+              name="portfolio-contact"
+              method="POST"
+              data-netlify="true"
+              onSubmit={onSubmit}
+              className="space-y-4 text-xs sm:text-sm"
+            >
+              <input type="hidden" name="form-name" value="portfolio-contact" />
+
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="space-y-1.5">
                   <label htmlFor="name" className="font-semibold text-foreground">
@@ -235,7 +286,7 @@ export function Contact() {
                   name="subject"
                   type="text"
                   required
-                  placeholder="e.g. Full-Stack Engineer Role / Backend Contract"
+                  placeholder="e.g. Full-Stack Engineer Role / AI Evaluation Contract"
                   value={formData.subject}
                   onChange={handleChange}
                   className="w-full rounded-xl border border-border-subtle bg-slate-50 dark:bg-slate-900/80 px-3.5 py-2.5 text-foreground placeholder:text-foreground-muted/60 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
