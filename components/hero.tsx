@@ -1,11 +1,15 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Download, Terminal, MapPin, Database, Cpu, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Download, Terminal, MapPin, Database, Globe, CheckCircle2 } from "lucide-react";
 import { Github, Linkedin } from "@/components/brand-icons";
+import { InteractiveGlobe } from "@/components/interactive-globe";
 
 export function Hero() {
+  const [activeTab, setActiveTab] = useState<"globe" | "code">("globe");
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -130,7 +134,7 @@ export function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Hero Right Code Card */}
+      {/* Hero Right: 3D Interactive World Globe & C++ Code Card */}
       <motion.div
         initial={{ x: 40, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
@@ -138,74 +142,107 @@ export function Hero() {
         className="relative flex-1 w-full max-w-lg md:max-w-none"
       >
         <div className="glass rounded-2xl overflow-hidden shadow-soft border-border-subtle bg-slate-950/80 text-slate-100">
-          {/* Mock Window Bar */}
-          <div className="flex items-center justify-between border-b border-slate-800 bg-slate-900/80 px-4 py-3">
+          
+          {/* Top Window Bar with Interactive Tab Switcher */}
+          <div className="flex items-center justify-between border-b border-slate-800 bg-slate-900/80 px-4 py-2.5">
             <div className="flex items-center gap-2">
               <span className="h-3 w-3 rounded-full bg-rose-500/80" />
               <span className="h-3 w-3 rounded-full bg-amber-500/80" />
               <span className="h-3 w-3 rounded-full bg-emerald-500/80" />
             </div>
-            <div className="flex items-center gap-2 text-xs font-mono text-slate-400">
-              <Terminal className="h-3.5 w-3.5 text-accent" />
-              <span>LuminaDB::WriteAheadLog.cpp</span>
+
+            {/* Tab Buttons */}
+            <div className="flex items-center gap-1 bg-slate-950/80 p-1 rounded-xl border border-slate-800 text-xs">
+              <button
+                onClick={() => setActiveTab("globe")}
+                className={`flex items-center gap-1.5 px-3 py-1 rounded-lg font-medium transition-all duration-200 cursor-pointer ${
+                  activeTab === "globe"
+                    ? "bg-primary text-white shadow-xs font-bold"
+                    : "text-slate-400 hover:text-slate-200"
+                }`}
+              >
+                <Globe className="h-3.5 w-3.5 text-cyan-300" />
+                <span>3D Interactive World</span>
+              </button>
+
+              <button
+                onClick={() => setActiveTab("code")}
+                className={`flex items-center gap-1.5 px-3 py-1 rounded-lg font-medium transition-all duration-200 cursor-pointer ${
+                  activeTab === "code"
+                    ? "bg-primary text-white shadow-xs font-bold"
+                    : "text-slate-400 hover:text-slate-200"
+                }`}
+              >
+                <Terminal className="h-3.5 w-3.5 text-amber-300" />
+                <span>C++17 Engine Code</span>
+              </button>
             </div>
-            <span className="text-[10px] font-mono rounded bg-primary/20 text-indigo-300 px-2 py-0.5">
-              C++17
-            </span>
           </div>
 
-          {/* Code Body */}
-          <div className="p-4 sm:p-5 font-mono text-xs sm:text-[13px] leading-relaxed space-y-2 overflow-x-auto">
-            <div className="text-slate-500">{"// LuminaDB: Transaction commit with ARIES WAL persistence"}</div>
+          {/* Tab 1: 3D Interactive World Globe */}
+          {activeTab === "globe" && (
+            <div className="p-2 sm:p-4">
+              <InteractiveGlobe />
+            </div>
+          )}
+
+          {/* Tab 2: C++17 Write-Ahead Log Engine Code */}
+          {activeTab === "code" && (
             <div>
-              <span className="text-purple-400">auto</span>{" "}
-              <span className="text-blue-400">TransactionManager</span>
-              <span className="text-slate-300">::</span>
-              <span className="text-amber-300">Commit</span>
-              <span className="text-slate-300">(</span>
-              <span className="text-emerald-300">TxnId</span> txn_id
-              <span className="text-slate-300">) -&gt; </span>
-              <span className="text-purple-400">bool</span> {"{"}
-            </div>
-            <div className="pl-4">
-              <span className="text-purple-400">const</span> lsn_t commit_lsn = wal_manager_-&gt;
-              <span className="text-amber-300">AppendRecord</span>({"{"}
-            </div>
-            <div className="pl-8 text-cyan-300">
-              .type = LogType::COMMIT,
-            </div>
-            <div className="pl-8 text-cyan-300">
-              .txn_id = txn_id,
-            </div>
-            <div className="pl-8 text-cyan-300">
-              .prev_lsn = active_txns_.at(txn_id).last_lsn
-            </div>
-            <div className="pl-4">{"});"}</div>
-            
-            <div className="pl-4 text-slate-500">{"// Synchronously flush log buffer before releasing locks"}</div>
-            <div className="pl-4">
-              wal_manager_-&gt;<span className="text-amber-300">FlushToDisk</span>(commit_lsn);
-            </div>
-            <div className="pl-4">
-              buffer_pool_-&gt;<span className="text-amber-300">UnpinDirtyPages</span>(txn_id);
-            </div>
-            <div className="pl-4">
-              <span className="text-purple-400">return</span> <span className="text-emerald-400">true</span>;
-            </div>
-            <div>{"}"}</div>
-          </div>
+              <div className="p-4 sm:p-5 font-mono text-xs sm:text-[13px] leading-relaxed space-y-2 overflow-x-auto">
+                <div className="text-slate-500">{"// LuminaDB: Transaction commit with ARIES WAL persistence"}</div>
+                <div>
+                  <span className="text-purple-400">auto</span>{" "}
+                  <span className="text-blue-400">TransactionManager</span>
+                  <span className="text-slate-300">::</span>
+                  <span className="text-amber-300">Commit</span>
+                  <span className="text-slate-300">(</span>
+                  <span className="text-emerald-300">TxnId</span> txn_id
+                  <span className="text-slate-300">) -&gt; </span>
+                  <span className="text-purple-400">bool</span> {"{"}
+                </div>
+                <div className="pl-4">
+                  <span className="text-purple-400">const</span> lsn_t commit_lsn = wal_manager_-&gt;
+                  <span className="text-amber-300">AppendRecord</span>({"{"}
+                </div>
+                <div className="pl-8 text-cyan-300">
+                  .type = LogType::COMMIT,
+                </div>
+                <div className="pl-8 text-cyan-300">
+                  .txn_id = txn_id,
+                </div>
+                <div className="pl-8 text-cyan-300">
+                  .prev_lsn = active_txns_.at(txn_id).last_lsn
+                </div>
+                <div className="pl-4">{"});"}</div>
+                
+                <div className="pl-4 text-slate-500">{"// Synchronously flush log buffer before releasing locks"}</div>
+                <div className="pl-4">
+                  wal_manager_-&gt;<span className="text-amber-300">FlushToDisk</span>(commit_lsn);
+                </div>
+                <div className="pl-4">
+                  buffer_pool_-&gt;<span className="text-amber-300">UnpinDirtyPages</span>(txn_id);
+                </div>
+                <div className="pl-4">
+                  <span className="text-purple-400">return</span> <span className="text-emerald-400">true</span>;
+                </div>
+                <div>{"}"}</div>
+              </div>
 
-          {/* Footer Status Bar */}
-          <div className="border-t border-slate-800 bg-slate-900/60 px-4 py-2.5 flex items-center justify-between text-xs text-slate-400">
-            <div className="flex items-center gap-1.5 text-emerald-400">
-              <CheckCircle2 className="h-3.5 w-3.5" />
-              <span className="font-mono text-[11px]">ClusterFuzzLite Passing</span>
+              {/* Status Bar */}
+              <div className="border-t border-slate-800 bg-slate-900/60 px-4 py-2.5 flex items-center justify-between text-xs text-slate-400">
+                <div className="flex items-center gap-1.5 text-emerald-400">
+                  <CheckCircle2 className="h-3.5 w-3.5" />
+                  <span className="font-mono text-[11px]">ClusterFuzzLite Passing</span>
+                </div>
+                <div className="flex items-center gap-2 font-mono text-[11px]">
+                  <Database className="h-3 w-3 text-cyan-400" />
+                  <span>ACID Slotted-Page Engine</span>
+                </div>
+              </div>
             </div>
-            <div className="flex items-center gap-2 font-mono text-[11px]">
-              <Database className="h-3 w-3 text-cyan-400" />
-              <span>ACID Slotted-Page Engine</span>
-            </div>
-          </div>
+          )}
+
         </div>
       </motion.div>
     </section>

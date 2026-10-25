@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="1000" height="600" fill="none">
+  <defs>
+    <linearGradient id="ny_bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1000" height="600" fill="url(#ny_bg)"/>
+
+  <!-- Top Navigation Bar -->
+  <rect width="1000" height="55" fill="#0b1120" stroke="#1e293b" stroke-width="1"/>
+  <text x="35" y="35" fill="#f8fafc" font-family="serif" font-size="20" font-weight="700" letter-spacing="3">NYUMBA</text>
+  <text x="175" y="34" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11" letter-spacing="1">FURNITURE FOR CONTEMPORARY NAIROBI</text>
+
+  <g transform="translate(620, 35)">
+    <text x="0" y="0" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">Living Room</text>
+    <text x="100" y="0" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">Dining</text>
+    <text x="170" y="0" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="12">Bedroom</text>
+    <text x="250" y="0" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="12" font-weight="700">Cart (1)</text>
+  </g>
+
+  <!-- Product Showcase Card (Left) -->
+  <rect x="35" y="85" width="460" height="480" rx="16" fill="#131d33" stroke="#253556" stroke-width="1.5"/>
+  <rect x="55" y="105" width="420" height="260" rx="12" fill="#1e2c47"/>
+  
+  <!-- Stylized Luxury Sofa Illustration -->
+  <g transform="translate(140, 160)">
+    <rect x="0" y="80" width="250" height="40" rx="10" fill="#d97706"/>
+    <rect x="15" y="30" width="220" height="60" rx="12" fill="#b45309"/>
+    <rect x="-10" y="45" width="35" height="75" rx="8" fill="#92400e"/>
+    <rect x="225" y="45" width="35" height="75" rx="8" fill="#92400e"/>
+    <!-- Wooden legs -->
+    <line x1="15" y1="120" x2="5" y2="150" stroke="#78350f" stroke-width="6" stroke-linecap="round"/>
+    <line x1="235" y1="120" x2="245" y2="150" stroke="#78350f" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <text x="55" y="395" fill="#f8fafc" font-family="serif" font-size="22" font-weight="700">The Mara 3-Seater Sofa</text>
+  <text x="55" y="420" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Kiln-Dried Kenyan Grevillea Hardwood • Textured Slate Linen</text>
+
+  <text x="55" y="465" fill="#34d399" font-family="system-ui, sans-serif" font-size="24" font-weight="800">KES 84,500</text>
+  
+  <rect x="240" y="440" width="235" height="42" rx="10" fill="#0284c7"/>
+  <text x="357" y="466" text-anchor="middle" fill="#ffffff" font-family="system-ui, sans-serif" font-size="13" font-weight="700">Pay via M-Pesa Express</text>
+
+  <!-- Right: "Will It Fit?" Spatial Dimension Calculator -->
+  <rect x="520" y="85" width="445" height="480" rx="16" fill="#131d33" stroke="#0284c7" stroke-width="1.5"/>
+  
+  <g transform="translate(545, 120)">
+    <text x="0" y="0" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="16" font-weight="700">📐 &quot;Will It Fit?&quot; Spatial Clearance Calculator</text>
+    <text x="0" y="24" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="12">Nairobi Apartment Doorway &amp; Elevator Verification</text>
+
+    <!-- Dimension breakdown -->
+    <rect y="45" width="395" height="65" rx="10" fill="#192642" stroke="#2b3d63"/>
+    <text x="15" y="70" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">SOFA SPECIFICATIONS</text>
+    <text x="15" y="92" fill="#f8fafc" font-family="monospace" font-size="13" font-weight="600">Width: 215cm  |  Depth: 92cm  |  Height: 74cm</text>
+
+    <!-- Elevator clearance test -->
+    <g transform="translate(0, 130)">
+      <rect width="395" height="55" rx="10" fill="#192642" stroke="#10b981"/>
+      <text x="15" y="24" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Standard Nairobi Elevator (78cm Door)</text>
+      <text x="15" y="42" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Diagonal clearance with cushions removed</text>
+      <text x="375" y="34" text-anchor="end" fill="#34d399" font-family="monospace" font-size="12" font-weight="700">✓ CLEARS (+8cm)</text>
+    </g>
+
+    <!-- Stairwell clearance test -->
+    <g transform="translate(0, 200)">
+      <rect width="395" height="55" rx="10" fill="#192642" stroke="#10b981"/>
+      <text x="15" y="24" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Apartment Stairwell 90° Turn</text>
+      <text x="15" y="42" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Vertical pivot calculation</text>
+      <text x="375" y="34" text-anchor="end" fill="#34d399" font-family="monospace" font-size="12" font-weight="700">✓ CLEARS (+14cm)</text>
+    </g>
+
+    <!-- Delivery Zones Box -->
+    <g transform="translate(0, 275)">
+      <rect width="395" height="85" rx="10" fill="#0f182c" stroke="#253556"/>
+      <text x="15" y="24" fill="#f1f5f9" font-family="system-ui, sans-serif" font-size="12" font-weight="700">Nairobi Zone Delivery Schedule</text>
+      <text x="15" y="46" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Zone 1 (Westlands, Kilimani, Lavington): <tspan fill="#34d399">KES 1,200</tspan></text>
+      <text x="15" y="68" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Zone 2 (Karen, Runda, Gigiri) + Room Setup: <tspan fill="#34d399">KES 2,700</tspan></text>
+    </g>
+  </g>
+</svg>
