@@ -13,16 +13,13 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>("dark");
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     const stored = localStorage.getItem("portfolio-theme") as Theme | null;
-    // Set dark mode as default
     const initialTheme = stored || "dark";
     setTheme(initialTheme);
     document.documentElement.classList.toggle("dark", initialTheme === "dark");
     document.documentElement.classList.toggle("light", initialTheme === "light");
-    setMounted(true);
   }, []);
 
   const toggleTheme = () => {
@@ -35,7 +32,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <div className={mounted ? "transition-opacity duration-500 opacity-100" : "opacity-0"}>
+      <div className="transition-colors duration-300">
         {children}
       </div>
     </ThemeContext.Provider>

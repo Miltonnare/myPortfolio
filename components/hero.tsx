@@ -31,12 +31,12 @@ export function Hero() {
   };
 
   const codePills = [
-    { name: "TypeScript / React / Next.js", color: "from-blue-500/15 to-cyan-500/15 text-blue-400 dark:text-cyan-400 border-blue-500/25" },
-    { name: "Python / FastAPI / NLI", color: "from-amber-500/15 to-yellow-500/15 text-amber-500 dark:text-amber-400 border-amber-500/25" },
-    { name: "C++17 / Database Engines", color: "from-indigo-500/15 to-purple-500/15 text-indigo-500 dark:text-indigo-400 border-indigo-500/25" },
-    { name: "Node.js / NestJS / Express", color: "from-emerald-500/15 to-teal-500/15 text-emerald-600 dark:text-emerald-400 border-emerald-500/25" },
-    { name: "PostgreSQL / MongoDB / Prisma", color: "from-cyan-500/15 to-blue-500/15 text-cyan-600 dark:text-cyan-300 border-cyan-500/25" },
-    { name: "Docker / CI/CD Pipelines", color: "from-rose-500/15 to-pink-500/15 text-rose-500 dark:text-rose-400 border-rose-500/25" }
+    { name: "TypeScript / React / Next.js", color: "from-blue-500/15 to-cyan-500/15 text-blue-700 dark:text-cyan-300 border-blue-500/30" },
+    { name: "Python / FastAPI / NLI", color: "from-amber-500/15 to-yellow-500/15 text-amber-700 dark:text-amber-300 border-amber-500/30" },
+    { name: "C++17 / Database Engines", color: "from-indigo-500/15 to-purple-500/15 text-indigo-700 dark:text-indigo-300 border-indigo-500/30" },
+    { name: "Node.js / NestJS / Express", color: "from-emerald-500/15 to-teal-500/15 text-emerald-700 dark:text-emerald-300 border-emerald-500/30" },
+    { name: "PostgreSQL / MongoDB / Prisma", color: "from-cyan-500/15 to-blue-500/15 text-cyan-700 dark:text-cyan-300 border-cyan-500/30" },
+    { name: "Docker / CI/CD Pipelines", color: "from-rose-500/15 to-pink-500/15 text-rose-700 dark:text-rose-300 border-rose-500/30" }
   ];
 
   return (
@@ -141,7 +141,7 @@ export function Hero() {
         transition={{ type: "spring", stiffness: 80, damping: 15, delay: 0.2 }}
         className="relative flex-1 w-full max-w-lg md:max-w-none"
       >
-        <div className="glass rounded-2xl overflow-hidden shadow-soft border-border-subtle bg-slate-950/80 text-slate-100">
+        <div className="rounded-2xl overflow-hidden shadow-soft border border-slate-800 bg-slate-950/95 text-slate-100 backdrop-blur-md">
           
           {/* Top Window Bar with Interactive Tab Switcher */}
           <div className="flex items-center justify-between border-b border-slate-800 bg-slate-900/80 px-4 py-2.5">

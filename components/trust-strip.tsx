@@ -36,7 +36,7 @@ export function TrustStrip() {
   ];
 
   return (
-    <section className="relative w-full border-y border-border-subtle bg-slate-900/30 dark:bg-slate-950/45 py-10 backdrop-blur-sm overflow-hidden">
+    <section className="relative w-full border-y border-border-subtle bg-slate-100/80 dark:bg-slate-950/60 py-10 backdrop-blur-sm overflow-hidden transition-colors duration-300">
       <div className="section-container flex flex-col gap-10">
         
         {/* Metrics Grid */}
