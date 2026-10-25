@@ -75,6 +75,31 @@ export const projects: Project[] = [
     featured: true
   },
   {
+    id: "theebloggers-platform",
+    title: "theeBloggers – Modern SaaS Publishing Platform & Notion Block Editor",
+    badge: "Full-Stack SaaS • Gemini AI • Stripe",
+    description: "A production-grade SaaS publishing platform built to compete directly with Substack and Medium, featuring a Notion-style block editor, Google Gemini AI writing assistance, and Stripe creator paywalls.",
+    problemSolved: "Independent writers and journalists struggle with restrictive publishing platforms that charge exorbitant platform fees, lack modern block-editing ergonomics, and offer zero built-in AI writing workflows.",
+    role: "Lead Full-Stack Developer (PLP Capstone)",
+    techStack: ["Next.js 16", "React 19", "TypeScript", "Prisma ORM", "PostgreSQL", "Stripe", "NextAuth v5", "Gemini 1.5 Flash", "Tailwind CSS", "Zod"],
+    keyFeatures: [
+      "Notion-style block editor supporting custom markdown shortcuts, blockquotes, code blocks, and slash (/) menu commands",
+      "Google Gemini 1.5 Flash integration generating automated SEO excerpts, click-worthy titles, and readability insights",
+      "Stripe Checkout paywall integration enabling paid subscriber tiers with webhook transaction settlement",
+      "NextAuth v5 authentication with Prisma adapter, role-based access control, and secure session management",
+      "Incremental Static Regeneration (ISR) and server-side news feed caching protecting external API rate limits"
+    ],
+    architecture: "Next.js App Router full-stack architecture with React 19 Server Actions, Prisma ORM communicating with PostgreSQL, NextAuth v5 session guards, and Stripe webhook handling for paywall unlocks.",
+    challenges: "Building a fluid Notion-style block editor with drag handles, block reordering, and instant markdown parsing without degrading client-side input latency.",
+    solution: "Engineered modular block state management using custom React hooks and debounced local state sync, isolating expensive markdown compilations and AI requests from the primary typing thread.",
+    tradeoffs: "Leveraged Next.js 16 Server Actions and Prisma rather than a separate Express backend to achieve unified end-to-end type safety between database models and client form validations via Zod.",
+    validation: "Deployed and verified with end-to-end user authentication flows, active Gemini AI suggestions, and Stripe test-mode webhook payment verification.",
+    image: "/images/theebloggers-preview.svg",
+    github: "https://github.com/Miltonnare/feb-2025-final-project-and-deployment-Miltonnare",
+    category: "fullstack",
+    featured: true
+  },
+  {
     id: "authenticity-ai",
     title: "AuthenticityAI – Evidence-First Political Statement Registry & NLI Engine",
     badge: "AI/NLP • FastAPI • Vector Search",
