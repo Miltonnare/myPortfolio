@@ -49,19 +49,6 @@ I am a software engineer focused on building verified, defensible systems that s
 
 ---
 
-### 📌 Recommended Pinned Repositories
-
-To present the highest level of technical credibility to visiting engineering leads and recruiters, pin these 6 repositories in this exact order:
-
-1. **`LuminaDB`** — Demonstrates advanced systems programming, C++17, memory management, and database transaction recovery.
-2. **`MicroJob_Project`** — Demonstrates monorepo architecture, NestJS, TypeScript, PostgreSQL, Docker, and CI/CD pipelines.
-3. **`AuthenticityAI`** — Demonstrates AI/ML depth, vector embeddings, NLI classification, and FastAPI service design.
-4. **`EVENTMANAGEMENT`** — Demonstrates production full-stack capability, secure cookie authentication, and active deployment.
-5. **`NyumbaF`** — Demonstrates clean frontend engineering, responsive design, and product thinking.
-6. **`Chatbot-`** — Demonstrates cloud API integration, low-latency Groq LLM inference, and Render deployment.
-
----
-
 ### 📫 Connect With Me
 
 * **Developer Portfolio:** [miltonnaresportfolio.netlify.app](https://miltonnaresportfolio.netlify.app/)
