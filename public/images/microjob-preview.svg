@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" fill="none">
+  <defs>
+    <linearGradient id="mjbg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a101d"/>
+      <stop offset="100%" stop-color="#0f1f38"/>
+    </linearGradient>
+    <linearGradient id="kenya" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="50%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+    <filter id="mjglow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#mjbg)"/>
+  <circle cx="680" cy="80" r="130" fill="#10b981" opacity="0.1" filter="url(#mjglow)"/>
+  <circle cx="120" cy="380" r="140" fill="#6366f1" opacity="0.12" filter="url(#mjglow)"/>
+
+  <!-- Main Card -->
+  <rect x="40" y="30" width="720" height="390" rx="16" fill="#0d172b" stroke="#1e293b" stroke-width="2"/>
+  <rect x="40" y="30" width="720" height="46" rx="16" fill="#13223f"/>
+  <rect x="40" y="60" width="720" height="16" fill="#13223f"/>
+  <circle cx="68" cy="53" r="6" fill="#ef4444" opacity="0.8"/>
+  <circle cx="88" cy="53" r="6" fill="#f59e0b" opacity="0.8"/>
+  <circle cx="108" cy="53" r="6" fill="#10b981" opacity="0.8"/>
+  <text x="400" y="58" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13" font-weight="600">MicroJob Kenya // Monorepo Architecture &amp; Informal Sector Marketplace</text>
+
+  <!-- Left: Monorepo Microservices Structure -->
+  <rect x="70" y="100" width="310" height="290" rx="12" fill="#101c36" stroke="#253556" stroke-width="1.5"/>
+  <text x="95" y="132" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="14" font-weight="700">Monorepo Modules &amp; CI Pipeline</text>
+  
+  <!-- Frontend node -->
+  <g transform="translate(95, 150)">
+    <rect width="260" height="48" rx="8" fill="#172a4d" stroke="#38bdf8" stroke-width="1"/>
+    <text x="14" y="24" fill="#f1f5f9" font-family="system-ui, sans-serif" font-size="12" font-weight="600">frontend/</text>
+    <text x="14" y="39" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">React 19 • TypeScript • Vite • PWA • Tailwind</text>
+  </g>
+
+  <!-- Backend node -->
+  <g transform="translate(95, 210)">
+    <rect width="260" height="48" rx="8" fill="#172a4d" stroke="#6366f1" stroke-width="1"/>
+    <text x="14" y="24" fill="#f1f5f9" font-family="system-ui, sans-serif" font-size="12" font-weight="600">backend/</text>
+    <text x="14" y="39" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">NestJS • Prisma ORM • PostgreSQL • JWT Auth</text>
+  </g>
+
+  <!-- CI & Docker node -->
+  <g transform="translate(95, 270)">
+    <rect width="260" height="48" rx="8" fill="#172a4d" stroke="#10b981" stroke-width="1"/>
+    <text x="14" y="24" fill="#f1f5f9" font-family="system-ui, sans-serif" font-size="12" font-weight="600">.github/workflows/ci.yml</text>
+    <text x="14" y="39" fill="#10b981" font-family="system-ui, sans-serif" font-size="10">✓ Automated Supertest Integration &amp; Docker Build</text>
+  </g>
+
+  <!-- Seed Data node -->
+  <g transform="translate(95, 330)">
+    <rect width="260" height="44" rx="8" fill="#172a4d" stroke="#f59e0b" stroke-width="1"/>
+    <text x="14" y="22" fill="#fbbf24" font-family="system-ui, sans-serif" font-size="11" font-weight="600">prisma/seed.ts</text>
+    <text x="14" y="36" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">47 Kenyan Counties &amp; Fundi Trade Classifications</text>
+  </g>
+
+  <!-- Right: Marketplace UI Mockup -->
+  <rect x="410" y="100" width="320" height="290" rx="12" fill="#0b1324" stroke="#1e293b" stroke-width="1.5"/>
+  <rect x="410" y="100" width="320" height="40" rx="12" fill="#13203c"/>
+  <rect x="410" y="125" width="320" height="15" fill="#13203c"/>
+  <text x="430" y="126" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="12" font-weight="700">Kenyan Informal Trades Marketplace</text>
+  
+  <!-- Trade Cards -->
+  <g transform="translate(425, 155)">
+    <!-- Card 1 -->
+    <rect width="290" height="65" rx="8" fill="#16233d" stroke="#334155"/>
+    <circle cx="28" cy="32" r="16" fill="#06b6d4" opacity="0.2"/>
+    <text x="28" y="36" text-anchor="middle" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="12" font-weight="700">PL</text>
+    <text x="56" y="26" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Licensed Plumber &amp; Pipefitter</text>
+    <text x="56" y="42" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">Nairobi, Westlands • Verified Escrow</text>
+    <rect x="220" y="20" width="60" height="22" rx="6" fill="#10b981" opacity="0.2"/>
+    <text x="250" y="35" text-anchor="middle" fill="#34d399" font-family="system-ui, sans-serif" font-size="10" font-weight="700">KES 2,500</text>
+  </g>
+
+  <g transform="translate(425, 230)">
+    <!-- Card 2 -->
+    <rect width="290" height="65" rx="8" fill="#16233d" stroke="#334155"/>
+    <circle cx="28" cy="32" r="16" fill="#f59e0b" opacity="0.2"/>
+    <text x="28" y="36" text-anchor="middle" fill="#fbbf24" font-family="system-ui, sans-serif" font-size="12" font-weight="700">EL</text>
+    <text x="56" y="26" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Solar &amp; Domestic Electrician</text>
+    <text x="56" y="42" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">Mombasa, Nyali • EPRA Certified</text>
+    <rect x="220" y="20" width="60" height="22" rx="6" fill="#10b981" opacity="0.2"/>
+    <text x="250" y="35" text-anchor="middle" fill="#34d399" font-family="system-ui, sans-serif" font-size="10" font-weight="700">KES 3,200</text>
+  </g>
+
+  <g transform="translate(425, 305)">
+    <!-- Card 3 -->
+    <rect width="290" height="65" rx="8" fill="#16233d" stroke="#334155"/>
+    <circle cx="28" cy="32" r="16" fill="#a855f7" opacity="0.2"/>
+    <text x="28" y="36" text-anchor="middle" fill="#c084fc" font-family="system-ui, sans-serif" font-size="12" font-weight="700">MS</text>
+    <text x="56" y="26" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="12" font-weight="600">Master Mason &amp; Tile Installer</text>
+    <text x="56" y="42" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">Kiambu, Ruiru • 8+ Yrs Experience</text>
+    <rect x="220" y="20" width="60" height="22" rx="6" fill="#10b981" opacity="0.2"/>
+    <text x="250" y="35" text-anchor="middle" fill="#34d399" font-family="system-ui, sans-serif" font-size="10" font-weight="700">KES 1,800/d</text>
+  </g>
+</svg>

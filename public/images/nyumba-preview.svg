@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450" fill="none">
+  <defs>
+    <linearGradient id="nyumbabg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f141f"/>
+      <stop offset="100%" stop-color="#192338"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#nyumbabg)"/>
+  
+  <!-- Window Container -->
+  <rect x="50" y="35" width="700" height="380" rx="16" fill="#111827" stroke="#1f2937" stroke-width="2"/>
+  <rect x="50" y="35" width="700" height="45" rx="16" fill="#1c2436"/>
+  <rect x="50" y="65" width="700" height="15" fill="#1c2436"/>
+  <circle cx="75" cy="58" r="6" fill="#ef4444" opacity="0.8"/>
+  <circle cx="95" cy="58" r="6" fill="#f59e0b" opacity="0.8"/>
+  <circle cx="115" cy="58" r="6" fill="#10b981" opacity="0.8"/>
+  <text x="400" y="63" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="13" font-weight="600">NYUMBA // Kenya-First Furniture Ecommerce &amp; Spatial Planning</text>
+
+  <!-- Left: Luxury Product Display -->
+  <rect x="80" y="105" width="310" height="280" rx="12" fill="#162032" stroke="#283852" stroke-width="1.5"/>
+  <rect x="100" y="125" width="270" height="150" rx="8" fill="#1f2c42"/>
+  <!-- Minimalist Chair Graphic -->
+  <path d="M190 230 V185 C190 170 205 160 235 160 C265 160 280 170 280 185 V230" stroke="#f59e0b" stroke-width="5" stroke-linecap="round"/>
+  <path d="M175 220 H295" stroke="#f59e0b" stroke-width="5" stroke-linecap="round"/>
+  <path d="M195 220 V255 M275 220 V255" stroke="#f59e0b" stroke-width="4" stroke-linecap="round"/>
+  <text x="235" y="150" text-anchor="middle" fill="#f59e0b" font-family="serif" font-size="11" letter-spacing="2">NAIROBI GREVILLEA SOLID WOOD</text>
+
+  <text x="100" y="305" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="15" font-weight="700">The Mara 3-Seater Sofa</text>
+  <text x="100" y="325" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Kiln-Dried Hardwood • Handwoven Kenyan Linen</text>
+  <text x="100" y="355" fill="#34d399" font-family="system-ui, sans-serif" font-size="14" font-weight="700">KES 84,500</text>
+  <rect x="250" y="338" width="120" height="26" rx="6" fill="#06b6d4" opacity="0.2"/>
+  <text x="310" y="355" text-anchor="middle" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="10" font-weight="700">M-Pesa Express STK</text>
+
+  <!-- Right: "Will It Fit?" Spatial Clearance Calculator -->
+  <rect x="410" y="105" width="310" height="280" rx="12" fill="#162032" stroke="#06b6d4" stroke-width="1.5"/>
+  <text x="430" y="135" fill="#38bdf8" font-family="system-ui, sans-serif" font-size="13" font-weight="700">Interactive "Will It Fit?" Engine</text>
+  <text x="430" y="153" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Doorway &amp; Elevator Clearance Calculator</text>
+
+  <g transform="translate(430, 175)">
+    <rect width="270" height="42" rx="6" fill="#1b283f" stroke="#334155"/>
+    <text x="12" y="26" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="11">Standard Nairobi Elevator (78cm)</text>
+    <text x="255" y="26" text-anchor="end" fill="#34d399" font-family="monospace" font-size="11">✓ Clears (8cm)</text>
+  </g>
+
+  <g transform="translate(430, 230)">
+    <rect width="270" height="42" rx="6" fill="#1b283f" stroke="#334155"/>
+    <text x="12" y="26" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="11">Apartment Stairwell Turn (90°)</text>
+    <text x="255" y="26" text-anchor="end" fill="#34d399" font-family="monospace" font-size="11">✓ Clears</text>
+  </g>
+
+  <!-- Delivery Rate Strip -->
+  <g transform="translate(430, 290)">
+    <rect width="270" height="75" rx="8" fill="#141c2c" stroke="#253556"/>
+    <text x="12" y="22" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="11" font-weight="600">Nairobi Flat-Rate Delivery Zones</text>
+    <text x="12" y="42" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">Westlands / Kilimani / Lavington: KES 1,200</text>
+    <text x="12" y="60" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">Karen / Runda (+ White Glove Assembly): KES 2,700</text>
+  </g>
+</svg>

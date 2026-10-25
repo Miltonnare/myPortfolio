@@ -1,56 +1,80 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code, Server, Wrench, BrainCircuit, Check } from "lucide-react";
+import { Code, Server, Wrench, BrainCircuit, Database, ShieldCheck } from "lucide-react";
 
 export function Skills() {
   const skillCategories = [
     {
-      title: "Frontend Development",
-      icon: <Code className="h-5 w-5 text-indigo-400" />,
+      title: "Core Programming Languages",
+      icon: <Code className="h-5 w-5 text-indigo-500" />,
       skills: [
-        { name: "React / React Native", level: "Advanced" },
-        { name: "Next.js (App Router)", level: "Advanced" },
-        { name: "TypeScript", level: "Intermediate" },
-        { name: "Tailwind CSS", level: "Advanced" },
-        { name: "JavaScript (ES6+)", level: "Advanced" },
-        { name: "HTML5 & CSS3", level: "Advanced" }
+        { name: "TypeScript", context: "MicroJob Monorepo, React 19, Next.js" },
+        { name: "Python", context: "FastAPI, NLI, Groq Chatbot, Scikit-learn" },
+        { name: "C++ (C++17)", context: "LuminaDB Storage Engine & B+Tree" },
+        { name: "JavaScript (ES6+)", context: "Node.js, Express REST APIs, DOM" },
+        { name: "Java 17", context: "Aura Document Processor & Gradle" },
+        { name: "SQL", context: "PostgreSQL, Prisma, Schema Design" }
       ]
     },
     {
-      title: "Backend Development",
-      icon: <Server className="h-5 w-5 text-cyan-400" />,
+      title: "Backend & Systems Architecture",
+      icon: <Server className="h-5 w-5 text-cyan-500" />,
       skills: [
-        { name: "Node.js / Express.js", level: "Advanced" },
-        { name: "Python / FastAPI", level: "Intermediate" },
-        { name: "MongoDB / Mongoose", level: "Advanced" },
-        { name: "PostgreSQL / SQL", level: "Intermediate" },
-        { name: "RESTful API Design", level: "Advanced" },
-        { name: "JWT & Session Security", level: "Advanced" }
+        { name: "NestJS / Express.js", context: "Modular Domain APIs & Middleware" },
+        { name: "FastAPI", context: "Asynchronous Python Microservices" },
+        { name: "Storage Engines", context: "Slotted-Page Files & Buffer Pools" },
+        { name: "Transaction Recovery", context: "ARIES Write-Ahead Logging (WAL)" },
+        { name: "Authentication Security", context: "Short-lived JWT & HTTP-Only Cookies" },
+        { name: "RESTful API Design", context: "Clean Architecture & DTO Validation" }
       ]
     },
     {
-      title: "Dev Tools & Infrastructure",
-      icon: <Wrench className="h-5 w-5 text-amber-400" />,
+      title: "Databases & Data Modeling",
+      icon: <Database className="h-5 w-5 text-emerald-500" />,
       skills: [
-        { name: "Git & GitHub workflows", level: "Advanced" },
-        { name: "Postman / API Testing", level: "Advanced" },
-        { name: "Linux / Shell Scripting", level: "Intermediate" },
-        { name: "Vercel / Netlify / Render", level: "Advanced" },
-        { name: "Docker Basics", level: "Familiar" },
-        { name: "CI / CD Pipelines", level: "Familiar" }
+        { name: "PostgreSQL", context: "Relational Schemas, Constraints & Indexes" },
+        { name: "MongoDB & Mongoose", context: "Document Modeling & Compound Indexes" },
+        { name: "Prisma ORM", context: "Type-Safe Migrations & Relations" },
+        { name: "In-Memory B+Tree", context: "O(log n) Key Lookup & Node Splits" },
+        { name: "Concurrency Controls", context: "Optimistic Versioning & Isolation" },
+        { name: "Database Seeding", context: "Kenyan Counties & Trade Classification" }
       ]
     },
     {
-      title: "AI & Data Science",
-      icon: <BrainCircuit className="h-5 w-5 text-rose-400" />,
+      title: "AI, Machine Learning & NLP",
+      icon: <BrainCircuit className="h-5 w-5 text-rose-500" />,
       skills: [
-        { name: "Natural Language Processing", level: "Intermediate" },
-        { name: "SpaCy NLP Engine", level: "Intermediate" },
-        { name: "Python Data Workflows", level: "Intermediate" },
-        { name: "Pandas & NumPy Data", level: "Familiar" },
-        { name: "Scikit-Learn ML Basics", level: "Familiar" },
-        { name: "Vector Embeddings & Search", level: "Familiar" }
+        { name: "Natural Language Inference", context: "Cross-Encoder Contradiction Scoring" },
+        { name: "Vector Similarity Search", context: "Dense Sentence Transformers & Cosine" },
+        { name: "Groq LPU Acceleration", context: "Sub-200ms Token Generation" },
+        { name: "LangChain", context: "Sliding Conversational Context Buffers" },
+        { name: "Scikit-Learn & Pandas", context: "TF-IDF Vectorization & Spotify Dataset" },
+        { name: "LLM Benchmarking", context: "Inference Latency & Evaluation" }
+      ]
+    },
+    {
+      title: "Frontend Engineering & UI/UX",
+      icon: <ShieldCheck className="h-5 w-5 text-amber-500" />,
+      skills: [
+        { name: "React 18 / 19", context: "Component Architecture & Custom Hooks" },
+        { name: "Next.js (App Router)", context: "Server Components & Static Generation" },
+        { name: "Tailwind CSS", context: "Design Tokens, Dark/Light Theming" },
+        { name: "Progressive Web Apps", context: "Service Workers & Mobile Caching" },
+        { name: "Framer Motion", context: "Performance-Conscious Transitions" },
+        { name: "Responsive & Accessible", context: "WCAG AA Contrast & Keyboard Navigation" }
+      ]
+    },
+    {
+      title: "DevOps, CI/CD & Testing",
+      icon: <Wrench className="h-5 w-5 text-purple-500" />,
+      skills: [
+        { name: "Docker", context: "Multi-Stage Containers & Compose" },
+        { name: "GitHub Actions", context: "Automated Supertest CI Pipelines" },
+        { name: "Fuzz Testing", context: "ClusterFuzzLite & Jazzer Fuzz Targets" },
+        { name: "Cloud Deployments", context: "Vercel, Render & Netlify" },
+        { name: "Linux & Bash", context: "Shell Scripting & Process Management" },
+        { name: "Git Workflows", context: "Feature Branches, Rebasing & Code Review" }
       ]
     }
   ];
@@ -66,21 +90,21 @@ export function Skills() {
 
   return (
     <section id="skills" className="section-container section-padding relative">
-      <div className="absolute bottom-0 right-0 h-75 w-75 rounded-full bg-primary/5 blur-[120px] pointer-events-none -z-10" />
+      <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-primary/5 blur-[120px] pointer-events-none -z-10" />
 
       {/* Section Title */}
       <div className="mb-12 space-y-4 text-center">
-        <span className="tag">My Skillset</span>
+        <span className="tag">Technical Competencies</span>
         <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          Ecosystem Mastery & Tech Proficiency
+          Categorized by Demonstrated Engineering Use
         </h2>
         <p className="mx-auto max-w-2xl text-sm leading-relaxed text-foreground-muted sm:text-base">
-          I choose the right tool for the job. Here is my current stack categorization, structured by practical competence.
+          No arbitrary percentage bars. Each capability below is substantiated by an active codebase, architectural component, or production service.
         </p>
       </div>
 
       {/* Category Grid */}
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {skillCategories.map((category, idx) => (
           <motion.div
             key={idx}
@@ -88,45 +112,29 @@ export function Skills() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            className="glass p-6 rounded-2xl flex flex-col justify-between hover:border-primary/20 hover:bg-slate-900/50"
+            className="glass p-6 rounded-2xl flex flex-col justify-between hover:border-primary/40 transition-all duration-300"
           >
             <div>
               {/* Category Header */}
-              <div className="flex items-center gap-3 border-b border-border-subtle/30 pb-4 mb-4">
-                <div className="rounded-xl bg-slate-900/80 p-2.5 shadow-inner border border-border-subtle/30">
+              <div className="flex items-center gap-3 border-b border-border-subtle pb-4 mb-4">
+                <div className="rounded-xl bg-slate-100 dark:bg-slate-900 p-2.5 shadow-inner border border-border-subtle">
                   {category.icon}
                 </div>
-                <h3 className="text-base font-bold text-foreground sm:text-lg">
+                <h3 className="text-base font-bold text-foreground">
                   {category.title}
                 </h3>
               </div>
 
-              {/* Skills Grid */}
-              <div className="grid gap-3 sm:grid-cols-2">
+              {/* Skills List */}
+              <div className="space-y-3">
                 {category.skills.map((skill, sIdx) => (
-                  <div
-                    key={sIdx}
-                    className="flex items-center justify-between rounded-xl bg-slate-950/40 border border-border-subtle/20 p-2.5"
-                  >
-                    <div className="flex items-center gap-2">
-                      <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                        <Check className="h-2.5 w-2.5" />
-                      </span>
-                      <span className="text-xs font-semibold text-foreground-muted hover:text-foreground transition-colors">
-                        {skill.name}
-                      </span>
+                  <div key={sIdx} className="space-y-1">
+                    <div className="flex items-center justify-between text-xs">
+                      <span className="font-bold text-foreground">{skill.name}</span>
                     </div>
-                    <span
-                      className={`text-[9px] font-bold uppercase tracking-wider rounded-md px-1.5 py-0.5 border ${
-                        skill.level === "Advanced"
-                          ? "bg-indigo-500/10 text-indigo-400 border-indigo-500/20"
-                          : skill.level === "Intermediate"
-                          ? "bg-cyan-500/10 text-cyan-400 border-cyan-500/20"
-                          : "bg-slate-500/10 text-slate-400 border-slate-500/20"
-                      }`}
-                    >
-                      {skill.level}
-                    </span>
+                    <p className="text-[11px] text-foreground-muted leading-tight">
+                      {skill.context}
+                    </p>
                   </div>
                 ))}
               </div>

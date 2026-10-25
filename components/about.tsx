@@ -6,7 +6,7 @@ import { BookOpen, Award, GraduationCap, Code2, ShieldCheck, Briefcase, Calendar
 
 export function About() {
   const cardVariants = {
-    hidden: { y: 30, opacity: 0 },
+    hidden: { y: 25, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
@@ -16,34 +16,34 @@ export function About() {
 
   const experiences = [
     {
-      role: "Freelance Full-Stack Developer",
-      company: "Contract / Client Projects",
+      role: "Full-Stack & Systems Developer",
+      company: "Independent & Open-Source Projects",
       period: "2024 - Present",
-      description: "Architected end-to-end full-stack SaaS apps, optimized REST APIs, and integrated secure auth systems.",
+      description: "Architected end-to-end full-stack applications, transactional database storage engines, and high-throughput AI microservices.",
       bulletPoints: [
-        "Implemented secure JWT authentication stored in HTTP-only, secure cookies, mitigating XSS vulnerability vectors.",
-        "Designed compound index models on MongoDB collections, reducing read query response latencies by 45%.",
-        "Configured Celery asynchronous task queues in Python backends, avoiding API server thread blocks."
+        "Authored LuminaDB, a transactional database engine in C++17 with slotted-page layout, ARIES WAL crash recovery, and in-memory B+Tree indexing.",
+        "Engineered the MicroJob Kenya monorepo with NestJS, Prisma ORM, PostgreSQL, React 19, Docker, and GitHub Actions CI pipelines.",
+        "Implemented production dual-token auth (short-lived JWT + HTTP-only cookie refresh rotation) on the Murang'a Events Reloaded platform deployed on Vercel."
       ]
     },
     {
       role: "Software Engineering Fellow",
       company: "Power Learn Project (PLP)",
       period: "2024",
-      description: "Immersive software engineering track specializing in Python, SQL/NoSQL databases, and collaborative product lifecycles.",
+      description: "Immersive pan-African software development track focusing on Python, web technologies, relational databases, and collaborative agile engineering.",
       bulletPoints: [
-        "Built distributed MERN jobs portals featuring debounced search and candidate evaluation pipelines.",
-        "Collaborated in agile teams using Git/GitHub version control workflows and feature branch deployments."
+        "Collaborated on agile sprint teams utilizing Git/GitHub feature branches, code reviews, and automated deployment pipelines.",
+        "Engineered full-stack applications with modular API structures, database schemas, and client-side UI optimization."
       ]
     },
     {
       role: "BSc. Computer Science Student",
       company: "Murang'a University of Technology",
       period: "2022 - Present",
-      description: "Acquiring core theoretical computer science and software development foundations.",
+      description: "Pursuing theoretical computer science and practical software systems engineering foundations.",
       bulletPoints: [
-        "In-depth research on Data Structures & Algorithms, Object-Oriented Programming (OOP in C++), and Relational Database Schema Design.",
-        "Developed custom PDF layout parsers and optimistic database locking controls for concurrency testing."
+        "In-depth focus on Data Structures & Algorithms, Systems Programming in C++, Operating System internals, and Database Management Systems (DBMS).",
+        "Applied concurrency control principles (optimistic locking, WAL logs, multi-threading) to standalone software engineering implementations."
       ]
     }
   ];
@@ -58,20 +58,20 @@ export function About() {
 
   return (
     <section id="about" className="section-container section-padding relative">
-      <div className="absolute top-1/2 left-0 h-[250px] w-[250px] rounded-full bg-accent-purple/5 blur-[120px] pointer-events-none -z-10" />
+      <div className="absolute top-1/2 left-0 h-64 w-64 rounded-full bg-accent-purple/5 blur-[120px] pointer-events-none -z-10" />
 
       {/* Section Title */}
       <div className="mb-12 space-y-4 text-center md:text-left">
-        <span className="tag">My Profile</span>
+        <span className="tag">Engineering Background</span>
         <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          Professional Background & Career Path
+          Computer Science Foundations &amp; Hands-On Delivery
         </h2>
         <p className="mx-auto max-w-3xl text-sm leading-relaxed text-foreground-muted md:mx-0 sm:text-base">
-          I bridge computer science foundations with modern full-stack development, leveraging active problem-solving skills to build secure, robust applications.
+          I connect core computer science fundamentals—data structures, disk storage mechanics, and transaction recovery—with modern full-stack application development in TypeScript and Python.
         </p>
       </div>
 
-      <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] items-start">
+      <div className="grid gap-10 lg:grid-cols-[1fr_1.3fr] items-start">
         {/* Left Column: Profile Card & Certifications */}
         <div className="space-y-6">
           
@@ -81,136 +81,137 @@ export function About() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            className="glass p-6 rounded-2xl flex flex-col sm:flex-row gap-6 items-center sm:items-start hover:border-primary/20"
+            className="glass p-6 rounded-2xl flex flex-col sm:flex-row gap-6 items-center sm:items-start"
           >
             <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-2xl border border-border-subtle shadow-subtle bg-slate-900">
               <Image
                 src="/images/prof.png"
-                alt="Milton profile picture"
+                alt="Milton Odhiambo profile photo"
                 fill
                 sizes="112px"
                 className="object-cover"
                 priority
               />
             </div>
-            <div className="space-y-3 text-center sm:text-left">
+            <div className="space-y-2 text-center sm:text-left">
               <h3 className="text-xl font-bold text-foreground">Milton Odhiambo</h3>
               <p className="text-xs font-semibold uppercase tracking-wider text-primary">
-                Full-Stack Software Engineer
+                Software Engineer
               </p>
-              <p className="text-xs sm:text-sm text-foreground-muted leading-relaxed">
-                Self-driven problem solver and systems designer focused on building secure databases, optimized API nodes, and fluid front-end interfaces.
+              <p className="text-xs text-foreground-muted leading-relaxed">
+                Nairobi, Kenya • Murang&apos;a University CS Student • Builder of Systems, Full-Stack Apps &amp; AI Microservices.
               </p>
+              <div className="pt-2 flex flex-wrap gap-2 justify-center sm:justify-start">
+                <span className="rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 px-2.5 py-0.5 text-[11px] font-semibold">
+                  Full-Stack
+                </span>
+                <span className="rounded-lg bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20 px-2.5 py-0.5 text-[11px] font-semibold">
+                  C++ Systems
+                </span>
+                <span className="rounded-lg bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20 px-2.5 py-0.5 text-[11px] font-semibold">
+                  FastAPI &amp; AI
+                </span>
+              </div>
             </div>
           </motion.div>
 
-          {/* Education Summary */}
+          {/* Core Working Philosophy Card */}
           <motion.div
             variants={cardVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            className="glass p-5 rounded-2xl space-y-3 hover:border-primary/20"
+            className="glass p-6 rounded-2xl space-y-4"
           >
-            <div className="flex items-center gap-2 text-primary">
-              <GraduationCap className="h-5 w-5" />
-              <h4 className="text-xs font-bold uppercase tracking-wider">Academic Education</h4>
+            <div className="flex items-center gap-2 text-sm font-bold text-foreground">
+              <Code2 className="h-4 w-4 text-accent" />
+              <span>Engineering Approach &amp; Values</span>
             </div>
-            <div className="space-y-1">
-              <h5 className="text-sm font-bold text-foreground">BSc. Computer Science</h5>
-              <p className="text-xs text-foreground-muted font-medium">Murang&apos;a University of Technology (2022 - Present)</p>
-            </div>
-            <p className="text-xs text-foreground-muted leading-relaxed">
-              Active student research focusing on Algorithmic complexity analysis, OOP software engineering, database normalization (1NF-3NF), and operating systems logic.
-            </p>
+            <ul className="space-y-2.5 text-xs sm:text-sm text-foreground-muted leading-relaxed">
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" />
+                <span><strong className="text-foreground">Evidence Over Claims:</strong> Every project listed has a working repository, tests, container configuration, or live deployment.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" />
+                <span><strong className="text-foreground">Defensive Architecture:</strong> From ACID transaction logging to JWT cookie rotation, security and crash consistency are treated as first-class constraints.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" />
+                <span><strong className="text-foreground">Continuous Verification:</strong> Automated CI workflows, Supertest suites, and fuzz testing ensure code remains maintainable and resilient.</span>
+              </li>
+            </ul>
           </motion.div>
 
-          {/* Certifications Block */}
+          {/* Certifications Card */}
           <motion.div
             variants={cardVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            className="glass p-5 rounded-2xl space-y-4 hover:border-primary/20"
+            className="glass p-6 rounded-2xl space-y-4"
           >
-            <div className="flex items-center gap-2 text-accent">
-              <Award className="h-5 w-5" />
-              <h4 className="text-xs font-bold uppercase tracking-wider">Industry Certifications</h4>
+            <div className="flex items-center gap-2 text-sm font-bold text-foreground">
+              <Award className="h-4 w-4 text-amber-500" />
+              <span>Verified Certifications</span>
             </div>
-            <div className="grid gap-2">
-              {certifications.map((cert, index) => (
-                <div key={index} className="flex items-center gap-2.5 rounded-xl bg-slate-950/40 border border-border-subtle/20 p-2.5">
-                  <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-400" />
-                  <div className="min-w-0">
-                    <p className="text-xs font-bold text-foreground truncate">{cert.name}</p>
-                    <p className="text-[10px] text-foreground-muted">{cert.issuer}</p>
-                  </div>
+            <div className="space-y-2.5">
+              {certifications.map((cert, idx) => (
+                <div key={idx} className="flex items-center justify-between text-xs border-b border-border-subtle/40 pb-2 last:border-0 last:pb-0">
+                  <span className="font-semibold text-foreground">{cert.name}</span>
+                  <span className="text-[11px] font-mono text-primary bg-primary/10 px-2 py-0.5 rounded">{cert.issuer}</span>
                 </div>
               ))}
             </div>
           </motion.div>
+
         </div>
 
-        {/* Right Column: Experience Timeline & Interests */}
+        {/* Right Column: Experience Timeline */}
         <div className="space-y-6">
-          
-          {/* Experience Timeline */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6 }}
-            className="glass p-6 rounded-2xl space-y-6"
-          >
-            <h3 className="text-sm font-bold uppercase tracking-wider text-foreground-muted flex items-center gap-2">
-              <Briefcase className="h-4.5 w-4.5 text-primary" />
-              <span>Professional Experience</span>
-            </h3>
+          <div className="flex items-center gap-2 text-sm font-bold text-foreground">
+            <Briefcase className="h-4 w-4 text-primary" />
+            <span>Experience &amp; Technical Track Record</span>
+          </div>
 
-            <div className="relative border-l border-border-subtle/50 ml-2.5 pl-6 space-y-8">
-              {experiences.map((exp, idx) => (
-                <div key={idx} className="relative">
-                  {/* Timeline Dot */}
-                  <span className="absolute -left-[31px] top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-slate-950 border-2 border-primary" />
-
-                  <div className="space-y-2">
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                      <h4 className="text-sm font-bold text-foreground">{exp.role}</h4>
-                      <span className="inline-flex items-center gap-1 text-[10px] font-bold text-primary bg-primary/5 px-2 py-0.5 rounded-md border border-primary/10 w-fit">
-                        <Calendar className="h-3 w-3" />
-                        {exp.period}
-                      </span>
-                    </div>
-                    <p className="text-xs text-accent font-semibold">{exp.company}</p>
-                    <p className="text-xs text-foreground-muted leading-relaxed">{exp.description}</p>
-                    
-                    <ul className="space-y-1.5 pt-1 text-xs text-foreground-muted">
-                      {exp.bulletPoints.map((pt, pIdx) => (
-                        <li key={pIdx} className="flex items-start gap-1.5">
-                          <span className="text-primary mt-0.5 shrink-0">•</span>
-                          <span>{pt}</span>
-                        </li>
-                      ))}
-                    </ul>
+          <div className="space-y-6">
+            {experiences.map((exp, idx) => (
+              <motion.div
+                key={idx}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                className="glass p-6 rounded-2xl space-y-4 relative"
+              >
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 border-b border-border-subtle/50 pb-3">
+                  <div>
+                    <h4 className="text-base font-bold text-foreground">{exp.role}</h4>
+                    <p className="text-xs font-semibold text-primary">{exp.company}</p>
+                  </div>
+                  <div className="flex items-center gap-1.5 text-xs text-foreground-muted font-mono">
+                    <Calendar className="h-3.5 w-3.5 text-accent" />
+                    <span>{exp.period}</span>
                   </div>
                 </div>
-              ))}
-            </div>
-          </motion.div>
 
-          {/* Quick-Scan Recruiting Summary */}
-          <div className="glass p-5 rounded-2xl bg-linear-to-br from-primary/5 to-accent/5 border border-primary/10 space-y-2">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-primary flex items-center gap-1.5">
-              <ShieldCheck className="h-4.5 w-4.5 text-primary" />
-              <span>Technical Competency Focus</span>
-            </h4>
-            <ul className="space-y-1.5 text-xs text-foreground-muted">
-              <li>• Available for internships, junior full-stack roles, or core contract projects.</li>
-              <li>• Strong version control discipline, clean code conventions, and API schema documentation.</li>
-              <li>• Proficient in writing modular, highly testable code structures using TypeScript, React/Next.js, Node.js, and Python.</li>
-            </ul>
+                <p className="text-xs sm:text-sm text-foreground-muted leading-relaxed">
+                  {exp.description}
+                </p>
+
+                <ul className="space-y-2 text-xs text-foreground-muted">
+                  {exp.bulletPoints.map((point, pIdx) => (
+                    <li key={pIdx} className="flex items-start gap-2">
+                      <span className="h-1.5 w-1.5 rounded-full bg-primary shrink-0 mt-1.5" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
           </div>
         </div>
+
       </div>
     </section>
   );

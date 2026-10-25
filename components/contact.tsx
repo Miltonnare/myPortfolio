@@ -2,8 +2,8 @@
 
 import { useState, FormEvent, ChangeEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, Send, CheckCircle2, Loader2, AlertCircle } from "lucide-react";
-import { Github, Linkedin } from "@/components/brand-icons";
+import { Mail, Send, CheckCircle2, Loader2, AlertCircle, Copy, Check, MapPin, Clock } from "lucide-react";
+import { Github, Linkedin, Twitter } from "@/components/brand-icons";
 
 interface FormData {
   name: string;
@@ -22,13 +22,19 @@ export function Contact() {
 
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [copied, setCopied] = useState(false);
   const [emailError, setEmailError] = useState("");
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText("miltonnareblessed@gmail.com");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
 
-    // Real-time email validation
     if (name === "email") {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (value && !emailRegex.test(value)) {
@@ -42,17 +48,15 @@ export function Contact() {
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Final validation checks
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
-      setEmailError("A valid email is required.");
+      setEmailError("A valid email address is required.");
       return;
     }
 
     setLoading(true);
-
-    // Simulate sending email API route delay
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    // Simulate network submission delay
+    await new Promise((resolve) => setTimeout(resolve, 1200));
 
     setLoading(false);
     setSubmitted(true);
@@ -61,86 +65,130 @@ export function Contact() {
 
   return (
     <section id="contact" className="section-container section-padding relative">
-      <div className="absolute top-1/4 right-0 h-62.5 w-62.5 rounded-full bg-indigo-500/5 blur-[120px] pointer-events-none -z-10" />
+      <div className="absolute top-1/4 right-0 h-72 w-72 rounded-full bg-primary/5 blur-[120px] pointer-events-none -z-10" />
 
       {/* Grid wrapper */}
       <div className="grid gap-12 lg:grid-cols-[1.1fr_1.3fr] items-start">
         
-        {/* Contact info column */}
+        {/* Contact Info Column */}
         <div className="space-y-6">
           <div className="space-y-4">
             <span className="tag">Get In Touch</span>
             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Let&apos;s Build Something Impactful
+              Let&apos;s Discuss Engineering Opportunities
             </h2>
             <p className="text-sm leading-relaxed text-foreground-muted sm:text-base">
-              I am open to early-career positions, technical internships, freelance projects, and open-source collaborations. Drop me a line, and let&apos;s talk engineering.
+              I am actively seeking software engineering positions, international remote opportunities, freelance backend contracts, and technical AI benchmark roles. Feel free to reach out directly.
             </p>
           </div>
 
-          {/* Social cards list */}
+          {/* Quick info cards */}
           <div className="space-y-3 pt-2">
-            {[
-              {
-                label: "Email Address",
-                value: "miltonnareblessed@gmail.com",
-                href: "mailto:miltonnareblessed@gmail.com",
-                icon: <Mail className="h-5 w-5 text-indigo-500" />
-              },
-              {
-                label: "GitHub Profile",
-                value: "github.com/Miltonnare",
-                href: "https://github.com/Miltonnare",
-                icon: <Github className="h-5 w-5 text-cyan-400" />
-              },
-              {
-                label: "LinkedIn Profile",
-                value: "linkedin.com/in/milton-odhiambo",
-                href: "https://www.linkedin.com/in/milton-odhiambo-14a662261",
-                icon: <Linkedin className="h-5 w-5 text-blue-500" />
-              }
-            ].map((contact, idx) => (
-              <a
-                key={idx}
-                href={contact.href}
-                target={contact.href.startsWith("mailto") ? undefined : "_blank"}
-                className="glass p-4 rounded-xl flex items-center gap-4 hover:border-primary/20 hover:bg-slate-900/40 hover:-translate-y-0.5 transition-all duration-300"
-              >
-                <div className="rounded-xl bg-slate-900/80 p-2.5 shadow-inner border border-border-subtle/30">
-                  {contact.icon}
+            {/* Email Card with Copy button */}
+            <div className="glass p-4 rounded-xl flex items-center justify-between hover:border-primary/40 transition-all duration-300">
+              <div className="flex items-center gap-3">
+                <div className="rounded-lg bg-slate-100 dark:bg-slate-900 p-2 text-primary border border-border-subtle">
+                  <Mail className="h-4.5 w-4.5" />
                 </div>
                 <div>
-                  <p className="text-[10px] uppercase font-bold tracking-wider text-foreground-muted/70">
-                    {contact.label}
-                  </p>
-                  <p className="text-xs sm:text-sm font-semibold text-foreground truncate hover:text-primary transition-colors">
-                    {contact.value}
-                  </p>
+                  <p className="text-xs text-foreground-muted">Direct Email</p>
+                  <a
+                    href="mailto:miltonnareblessed@gmail.com"
+                    className="text-xs sm:text-sm font-bold text-foreground hover:text-primary transition-colors"
+                  >
+                    miltonnareblessed@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              <button
+                onClick={copyEmail}
+                className="p-2 text-foreground-muted hover:text-foreground transition-colors cursor-pointer"
+                title="Copy email to clipboard"
+                aria-label="Copy email address"
+              >
+                {copied ? <Check className="h-4 w-4 text-emerald-500" /> : <Copy className="h-4 w-4" />}
+              </button>
+            </div>
+
+            {/* Profiles */}
+            <div className="grid grid-cols-2 gap-3">
+              <a
+                href="https://github.com/Miltonnare"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass p-3.5 rounded-xl flex items-center gap-2.5 hover:border-primary/40 transition-all duration-300 group"
+              >
+                <div className="rounded-lg bg-slate-100 dark:bg-slate-900 p-2 text-foreground group-hover:text-primary transition-colors border border-border-subtle">
+                  <Github className="h-4 w-4" />
+                </div>
+                <div>
+                  <p className="text-[10px] text-foreground-muted">GitHub</p>
+                  <p className="text-xs font-bold text-foreground group-hover:text-primary transition-colors">@Miltonnare</p>
                 </div>
               </a>
-            ))}
+
+              <a
+                href="https://www.linkedin.com/in/milton-odhiambo-14a662261"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="glass p-3.5 rounded-xl flex items-center gap-2.5 hover:border-primary/40 transition-all duration-300 group"
+              >
+                <div className="rounded-lg bg-slate-100 dark:bg-slate-900 p-2 text-blue-500 border border-border-subtle">
+                  <Linkedin className="h-4 w-4" />
+                </div>
+                <div>
+                  <p className="text-[10px] text-foreground-muted">LinkedIn</p>
+                  <p className="text-xs font-bold text-foreground group-hover:text-primary transition-colors">Milton Odhiambo</p>
+                </div>
+              </a>
+            </div>
+
+            {/* Location & Timezone info */}
+            <div className="glass p-3.5 rounded-xl flex items-center justify-between text-xs text-foreground-muted">
+              <div className="flex items-center gap-2">
+                <MapPin className="h-4 w-4 text-accent" />
+                <span>Nairobi, Kenya</span>
+              </div>
+              <div className="flex items-center gap-2 font-mono text-[11px]">
+                <Clock className="h-3.5 w-3.5 text-primary" />
+                <span>EAT (UTC+3)</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Form column */}
-        <div className="relative">
-          <AnimatePresence mode="wait">
-            {!submitted ? (
-              <motion.form
-                key="form"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                onSubmit={onSubmit}
-                className="glass rounded-2xl p-6 space-y-4 hover:border-primary/10 bg-slate-950/50"
-              >
-                <h3 className="text-base font-bold text-foreground sm:text-lg">
-                  Send a Direct Message
-                </h3>
+        {/* Contact Form Column */}
+        <div className="glass p-6 sm:p-8 rounded-2xl relative">
+          <h3 className="text-lg font-bold text-foreground mb-4">
+            Send an Inquiry
+          </h3>
 
-                {/* Name */}
+          {submitted ? (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="py-10 text-center space-y-3"
+            >
+              <div className="h-12 w-12 rounded-full bg-emerald-500/20 text-emerald-500 mx-auto flex items-center justify-center border border-emerald-500/30">
+                <CheckCircle2 className="h-6 w-6" />
+              </div>
+              <h4 className="text-base font-bold text-foreground">Message Sent Successfully</h4>
+              <p className="text-xs text-foreground-muted max-w-sm mx-auto">
+                Thank you for reaching out! I typically respond to technical and recruiter inquiries within 24 hours.
+              </p>
+              <button
+                onClick={() => setSubmitted(false)}
+                className="btn-secondary text-xs mt-2"
+              >
+                Send Another Message
+              </button>
+            </motion.div>
+          ) : (
+            <form onSubmit={onSubmit} className="space-y-4 text-xs sm:text-sm">
+              <div className="grid gap-4 sm:grid-cols-2">
                 <div className="space-y-1.5">
-                  <label htmlFor="name" className="text-xs font-semibold text-foreground-muted">
+                  <label htmlFor="name" className="font-semibold text-foreground">
                     Your Name
                   </label>
                   <input
@@ -148,116 +196,87 @@ export function Contact() {
                     name="name"
                     type="text"
                     required
+                    placeholder="e.g. Sarah Jenkins"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full rounded-xl border border-border-subtle bg-slate-950/60 px-4 py-3 text-xs text-foreground outline-none focus:border-primary focus:bg-slate-950 transition-all duration-300"
-                    placeholder="Enter your name"
+                    className="w-full rounded-xl border border-border-subtle bg-slate-50 dark:bg-slate-900/80 px-3.5 py-2.5 text-foreground placeholder:text-foreground-muted/60 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
                   />
                 </div>
 
-                {/* Email */}
                 <div className="space-y-1.5">
-                  <label htmlFor="email" className="text-xs font-semibold text-foreground-muted">
-                    Email Address
+                  <label htmlFor="email" className="font-semibold text-foreground">
+                    Your Email
                   </label>
                   <input
                     id="email"
                     name="email"
                     type="email"
                     required
+                    placeholder="sarah@company.com"
                     value={formData.email}
                     onChange={handleChange}
-                    className={`w-full rounded-xl border bg-slate-950/60 px-4 py-3 text-xs text-foreground outline-none focus:border-primary focus:bg-slate-950 transition-all duration-300 ${
-                      emailError ? "border-rose-500/50 focus:border-rose-500" : "border-border-subtle"
-                    }`}
-                    placeholder="you@example.com"
+                    className="w-full rounded-xl border border-border-subtle bg-slate-50 dark:bg-slate-900/80 px-3.5 py-2.5 text-foreground placeholder:text-foreground-muted/60 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
                   />
                   {emailError && (
-                    <p className="flex items-center gap-1 text-[10px] text-rose-500 font-semibold mt-1">
-                      <AlertCircle className="h-3.5 w-3.5" />
+                    <p className="text-[11px] text-rose-500 flex items-center gap-1 pt-0.5">
+                      <AlertCircle className="h-3 w-3" />
                       <span>{emailError}</span>
                     </p>
                   )}
                 </div>
+              </div>
 
-                {/* Subject */}
-                <div className="space-y-1.5">
-                  <label htmlFor="subject" className="text-xs font-semibold text-foreground-muted">
-                    Subject
-                  </label>
-                  <input
-                    id="subject"
-                    name="subject"
-                    type="text"
-                    required
-                    value={formData.subject}
-                    onChange={handleChange}
-                    className="w-full rounded-xl border border-border-subtle bg-slate-950/60 px-4 py-3 text-xs text-foreground outline-none focus:border-primary focus:bg-slate-950 transition-all duration-300"
-                    placeholder="Project Inquiry, Internship Opportunity..."
-                  />
-                </div>
+              <div className="space-y-1.5">
+                <label htmlFor="subject" className="font-semibold text-foreground">
+                  Subject / Role Description
+                </label>
+                <input
+                  id="subject"
+                  name="subject"
+                  type="text"
+                  required
+                  placeholder="e.g. Full-Stack Engineer Role / Backend Contract"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  className="w-full rounded-xl border border-border-subtle bg-slate-50 dark:bg-slate-900/80 px-3.5 py-2.5 text-foreground placeholder:text-foreground-muted/60 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
+                />
+              </div>
 
-                {/* Message */}
-                <div className="space-y-1.5">
-                  <label htmlFor="message" className="text-xs font-semibold text-foreground-muted">
-                    Message Body
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows={4}
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="w-full resize-none rounded-xl border border-border-subtle bg-slate-950/60 px-4 py-3 text-xs text-foreground outline-none focus:border-primary focus:bg-slate-950 transition-all duration-300"
-                    placeholder="Describe your project, role, or proposal..."
-                  />
-                </div>
+              <div className="space-y-1.5">
+                <label htmlFor="message" className="font-semibold text-foreground">
+                  Message Details
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows={4}
+                  placeholder="Share details about the project, role requirements, or collaboration..."
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="w-full rounded-xl border border-border-subtle bg-slate-50 dark:bg-slate-900/80 px-3.5 py-2.5 text-foreground placeholder:text-foreground-muted/60 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors resize-none"
+                />
+              </div>
 
-                {/* Submit button */}
-                <button
-                  type="submit"
-                  disabled={loading || !!emailError}
-                  className="btn-primary w-full flex items-center justify-center gap-2 py-3 text-xs sm:text-sm font-semibold cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {loading ? (
-                    <>
-                      <Loader2 className="h-4 w-4 animate-spin" />
-                      <span>Transmitting Message...</span>
-                    </>
-                  ) : (
-                    <>
-                      <Send className="h-4 w-4" />
-                      <span>Send Message</span>
-                    </>
-                  )}
-                </button>
-              </motion.form>
-            ) : (
-              /* Success screen card */
-              <motion.div
-                key="success"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                className="glass rounded-2xl p-8 text-center bg-slate-950/50 space-y-4 border border-emerald-500/20"
+              <button
+                type="submit"
+                disabled={loading}
+                className="btn-primary w-full py-3 text-xs sm:text-sm font-bold flex items-center justify-center gap-2 mt-2"
               >
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                  <CheckCircle2 className="h-7 w-7" />
-                </div>
-                <h3 className="text-lg font-bold text-foreground">Message Transmitted Successfully</h3>
-                <p className="text-xs sm:text-sm text-foreground-muted leading-relaxed max-w-sm mx-auto">
-                  Thank you for reaching out. Your message has been dispatched, and I will get back to you as soon as possible.
-                </p>
-                <button
-                  onClick={() => setSubmitted(false)}
-                  className="btn-outline inline-flex text-xs font-semibold px-5 py-2.5 cursor-pointer"
-                >
-                  Send another message
-                </button>
-              </motion.div>
-            )}
-          </AnimatePresence>
+                {loading ? (
+                  <>
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                    <span>Dispatching Message...</span>
+                  </>
+                ) : (
+                  <>
+                    <Send className="h-4 w-4" />
+                    <span>Send Engineering Inquiry</span>
+                  </>
+                )}
+              </button>
+            </form>
+          )}
         </div>
 
       </div>
